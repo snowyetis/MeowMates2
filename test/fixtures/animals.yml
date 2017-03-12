@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  animalName: MyString
+  gender: MyString
+  age: MyString
+  dob: 2017-03-05
+
+two:
+  animalName: MyString
+  gender: MyString
+  age: MyString
+  dob: 2017-03-05

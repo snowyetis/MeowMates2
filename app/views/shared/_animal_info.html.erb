@@ -1,0 +1,39 @@
+<div id="animal-info" class="well">
+  <div class="text-center">
+    <%= render 'shared/animal_intro_avatar', animal: @animal  %><br>
+    <% if @animal.animalName.present? %>
+      <h5><%= link_to @animal.animalName, @animal %></h5>
+    <% end %>
+  </div>
+  <h5>
+  <% if @animal.fixed.present? %>
+    <%= fa_icon "neuter" %>
+    <%= @animal.fixed %>
+  <% end %>
+  </h5>
+  <h5>
+    <% if @animal.shots.present? %>
+      <%= fa_icon "user-md" %>
+      <%= @animal.shots %>
+    <% end %>
+  </h5>
+  <% if @animal.dob.present? %>
+    <h5>
+      <%= fa_icon @animal.gender %>
+      <%= "#{pluralize(age(@animal.dob), 'year')} old" %>
+    </h5>
+  <% end %>
+  <% if @animal.location.present? %>
+    <h5>
+      <%= fa_icon 'map-marker' %>
+      <%= @animal.location %>
+    </h5>
+  <% end %>
+  <br>
+  <div class="text-center">
+    <!-- <% unless is_current_user?(@user) %>
+      <%= render 'follows/form', user: @user %>
+      <h6><%= 'Follows you' if current_user.followed_by?(@user) %></h6>
+    <% end %> -->
+  </div>
+</div>

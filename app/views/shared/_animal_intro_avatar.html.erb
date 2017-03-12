@@ -1,0 +1,5 @@
+<% if animal %>
+  <%= link_to animal_path(animal) do %>
+    <%= image_tag animal.animal_intro_avatar.url || 'animal_intro_avatar.jpg', class: 'avatar' %>
+  <% end %>
+<% end %>

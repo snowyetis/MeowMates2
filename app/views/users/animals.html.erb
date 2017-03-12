@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-lg-3">
+  </div>
+  <div class="col-lg-6 well">
+    <h3>Find Animals</h3>
+    <hr>
+    <div id="animals">
+      <%= render(@animals) || render('shared/no_resource', resources: 'Animals') %>
+    </div>
+    <%= render 'shared/paginate', resources: @animals %>
+  </div>
+  <div class="col-lg-3">
+    <%= render 'shared/links' %>
+  </div>
+</div>
