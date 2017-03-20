@@ -4,13 +4,13 @@
     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
       <!-- Convo count -->
       <i class="fa fa-envelope-o fa-2x"></i>
-      <span class="badge bg-important">5
+      <span class="badge bg-important"><%= @messages_count %>
       </span>
     </a>
     <ul class="dropdown-menu extended inbox">
       <div class="notify-arrow notify-arrow-blue"></div>
       <li>
-        <p class="blue">You have 5 new messages</p>
+        <p class="blue">You have <%= @messages_count %> new messages</p>
           <%= link_to 'Your Conversations', conversations_path %>
       </li>
 

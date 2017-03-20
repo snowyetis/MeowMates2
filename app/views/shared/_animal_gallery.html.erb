@@ -7,17 +7,23 @@
 
   <% else %>
 
-  <div class="autoplay">
+  <!-- <div class="autoplay">
     <div class="col-md-6">
-      <div class="team-info">
+      <div class="team-info"> -->
+      <div class="autoplay">
         <% for animal in @animals %>
-          <%= link_to show_gallery_detail_path(animal) do %>
-            <!-- <%= image_tag animal.animal_intro_avatar, class: "img-responsive" %> -->
-            <% render 'shared/animal_intro_avatar' %>
-          <% end %>
+          <!-- <%= link_to show_gallery_detail_path(animal) do %> -->
+          <div class="col-md-3">
+            <!-- <div class="team-info">
+              <div class="img-sec"> -->
+                <%= render 'shared/animal_intro_avatar', animal: animal %>
+              <!-- </div>
+            </div> -->
+          </div>
+          <!-- <% end %> -->
         <% end %>
-      </div>
-    </div>
-  </div>
-  
+       </div>
+    <!-- </div>
+  </div>  -->
+
 <% end %>

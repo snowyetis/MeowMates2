@@ -1,7 +1,6 @@
-<% if current_user.blank? %>
-
-  <% if gallery_view %>
-    <%= image_tag animal.animal_intro_avatar || 'avatar.jpg', class: 'avatar' %>
+<% if @gallery_view %>
+  <% if animal %>
+    <%= image_tag animal.animal_intro_avatar.url(:gallery_thumb), class: 'img-responsive' %>
   <% end %>
 
 <% else %>
@@ -11,4 +10,5 @@
       <%= image_tag animal.animal_intro_avatar || 'avatar.jpg', class: 'avatar' %>
     <% end %>
   <% end %>
+
 <% end %>

@@ -8,6 +8,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :get_message_count, if: :user_signed_in?
+
+  def get_message_count
+    # if user_signed_in?
+      @messages_count = current_user.mailbox.inbox(:unread => true).count(:id)
+      if @messages_count.blank?
+        @messages_count = 0
+      end
+    # end
+  end
 
   protected
   def configure_permitted_parameters
@@ -25,4 +35,5 @@ class ApplicationController < ActionController::Base
   end
 
   include PublicActivity::StoreController
+
 end

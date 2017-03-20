@@ -19,7 +19,9 @@ class HomeController < ApplicationController
   def front
     # @activities = PublicActivity::Activity.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
     @front = true
-    @activities = PublicActivity::Activity.where(key: 'animal.create').order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    @gallery_view = true
+    @animals = Animal.order("RANDOM()").limit(10) # SQLite abd PostgresSQL syntax
+    # @activities = PublicActivity::Activity.where(key: 'animal.create').order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   def find_friends

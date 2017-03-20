@@ -206,6 +206,29 @@ textarea {
   }
 }
 
+li {
+  a {
+    span.badge {
+        display: inline-block;
+        min-width: 10px;
+        padding: 3px 7px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #fff;
+        line-height: 1;
+        vertical-align: baseline;
+        white-space: nowrap;
+        text-align: center;
+        background-color: #777777;
+        border-radius: 10px;
+        position: absolute;
+        top: -5px;
+        left: 20px;
+      }
+    }
+  }
+
+
 #links,
 #user-info {
   h5 {

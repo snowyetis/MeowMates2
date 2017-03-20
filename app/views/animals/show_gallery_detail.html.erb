@@ -1,10 +1,18 @@
 <div class="row">
   <div class="col-xs-9">
-    <%= image_tag(@animal.animal_intro_avatar.url %>
+    <%= image_tag(@animal.animal_intro_avatar.url(:gallery_thumb)) %>
+    <hr />
+    <div class="well">
+      <p><b>Description: </b><%= @animal.content %></p>
+    </div>
   </div>
 
   <div class="col-xs-3">
-    <p><b>Name: </b><%= @animal.animalName%></p>
-    <p><b>Description: </b><%= @animal.content %></p>
+    <p><b>Name: </b><%= @animal.animalName %></p>
+    <p><b>Gender: </b><%= @animal.gender %></p>
+    <p><b>Date of Birth: </b><%= @animal.dob %></p>
+    <p><b>Fixed: </b><%= @animal.fixed %></p>
+    <p><b>Shots: </b><%= @animal.shots %></p>
+
   </div>
 </div>
