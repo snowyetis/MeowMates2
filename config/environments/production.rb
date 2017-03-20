@@ -78,13 +78,12 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'http://socifyapp.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'http://meowmates.herokuapp.com' }
 
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.perform_deliveries = true
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
+  ActionMailer::Base.smtp_settings = {
     :user_name =>  ENV['USERNAME'],
     :password =>  ENV['PASSWORD'],
     :address => 'smtp.mailtrap.io',
