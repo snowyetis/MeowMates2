@@ -1,14 +1,16 @@
 class AnimalsController < ApplicationController
 # before_action :authenticate_user!
-before_action :set_animal, only: [:show, :edit, :update, :destroy]
+before_action :set_animal, only: [:show, :edit, :update, :destroy, :show_gallery_detail]
 
 def index
   @animals = Animal.all
-  render @animals
 end
 
 def show
-  @animals = current_user.animals
+  @activities = PublicActivity::Activity.where(owner: @user).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+end
+
+def show_gallery_detail
 end
 
 def new
@@ -16,10 +18,21 @@ end
 
 def create
   @animals  = current_user.animals.new(animal_params)
-  if @animals.save
+
+  if @animals.save!
+    @animals.animal_intro_avatar.url
+    
     redirect_to root_path
   else
     redirect_to root_path, notice: @animals.errors.full_messages.first
+  end
+end
+
+def destroy
+  @animal.destroy
+  respond_to do |format|
+    format.js
+    format.html { redirect_to root_path }
   end
 end
 

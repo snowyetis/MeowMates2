@@ -1,0 +1,17 @@
+<% render 'shared/animal_intro_avatar', animal: @animal %>
+<br>
+<div id="animal-<%= @animal.id %>" class="row">
+  <%= render 'shared/animal_info' %>
+</div>
+<div class="col-lg-6">
+  <div id="activities">
+    <% if @activities.empty? %>
+      <div class="well">
+        <%= render('shared/no_resource', resources: 'Activities') %>
+      </div>
+    <% else %>
+      <%= render_activities(@activities, layout: '/shared/activity') %>
+    <% end %>
+  </div>
+    <%= render 'shared/paginate', resources: @activities %>
+</div>

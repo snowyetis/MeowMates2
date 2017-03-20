@@ -1,0 +1,23 @@
+<% if user_signed_in? %>
+  <div class="col-md-12">
+    <div id="activity-<%= activity.id %>" class="activity">
+      <%= render_activity(activity) %>
+    </div>
+  </div>
+
+  <% else %>
+
+  <div class="autoplay">
+    <div class="col-md-6">
+      <div class="team-info">
+        <% for animal in @animals %>
+          <%= link_to show_gallery_detail_path(animal) do %>
+            <!-- <%= image_tag animal.animal_intro_avatar, class: "img-responsive" %> -->
+            <% render 'shared/animal_intro_avatar' %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+<% end %>

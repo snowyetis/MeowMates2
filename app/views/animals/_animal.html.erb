@@ -1,26 +1,27 @@
-<div class="info">
-  <span class="action">Posted a <%= link_to 'animal', animal %></span>
-</div>
-<div class="content">
-  <% if animal.animal_intro_avatar.present? %>
-    <div class="attachment">
-      <%= image_tag animal.animal_intro_avatar %>
-    </div>
-  <% end %>
-  <%= render 'shared/created_at', activity: animal %>
-  <div class="points">
-    <span class="like-count"><%= pluralize(animal.cached_votes_up, 'like') %></span>
-    <span class="comments-count"><%= pluralize(animal.comments_count, 'comment') %></span>
-    <div class="pull-right">
-      <% if animal_belongs_to_user?(animal) %>
-        <%= link_to edit_animal_path(animal), class: 'btn btn-primary btn-sm' do %>
-          <% fa_icon 'pencil' %>
+
+  <div class="info">
+    <span class="action">Posted a <%= link_to 'animal', animal %></span>
+  </div>
+  <div class="content">
+    <% if animal.animal_intro_avatar.present? %>
+      <div class="attachment">
+        <%= image_tag animal.animal_intro_avatar %>
+      </div>
+    <% end %>
+    <%= render 'shared/created_at', activity: animal %>
+    <div class="points">
+      <span class="like-count"><%= pluralize(animal.cached_votes_up, 'like') %></span>
+      <span class="comments-count"><%= pluralize(animal.comments_count, 'comment') %></span>
+      <div class="pull-right">
+        <% if animal_belongs_to_user?(animal) %>
+          <%= link_to edit_animal_path(animal), class: 'btn btn-primary btn-sm' do %>
+            <% fa_icon 'pencil' %>
+          <% end %>
+          <%= link_to animal_path(animal), method: :delete, class:'btn btn-danger btn-sm', remote: true do %>
+            <% fa_icon 'trash' %>
+          <% end %>
         <% end %>
-        <%= link_to animal_path(animal), method: :delete, class:'btn btn-danger btn-sm', remote: true do %>
-          <% fa_icon 'trash' %>
-        <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
-</div>
-<%= render 'shared/actions', resource: animal %>
+<%= render 'shared/animal_actions', resource: animal %>

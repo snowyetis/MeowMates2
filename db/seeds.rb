@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+animal.create
+animal.animalName = "Kitty Purriington"
+animal.gender = "female"
+animal.shots = "T"
+animal.fixed = "T"
+animal.content = "This is content"
+animal.user_id = 1
+animal.remote_animal_intro_avatar.url =

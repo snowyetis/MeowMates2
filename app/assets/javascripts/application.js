@@ -11,10 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require hermitage
 //= require jquery.atwho
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require bootstrap
 //= require bindWithDelay
 //= require jquery.datetimepicker
+//= require chosen-jquery
 //= require_tree .

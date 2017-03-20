@@ -4,7 +4,7 @@
       <h4 class="name"><%= link_to activity.owner.name, user_path(activity.owner) %></h4>
     </div>
     <div class="content">
-      <div id="post-<%= activity.trackable.id %>" class="activity-post">
+      <div id="animal-<%= activity.trackable.id %>" class="activity-post">
         <%= render activity.trackable, remote: true %>
       </div>
     </div>

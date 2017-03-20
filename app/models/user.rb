@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   acts_as_voter
   acts_as_follower
   acts_as_followable
+  acts_as_messageable
 
   has_many :posts
   has_many :comments
@@ -18,6 +19,10 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
   mount_uploader :cover, AvatarUploader
+
+  def mailboxer_email(object)
+    :email
+  end
 
   validates_presence_of :name
 

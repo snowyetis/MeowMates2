@@ -17,7 +17,9 @@ class HomeController < ApplicationController
   end
 
   def front
-    @activities = PublicActivity::Activity.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    # @activities = PublicActivity::Activity.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    @front = true
+    @activities = PublicActivity::Activity.where(key: 'animal.create').order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   def find_friends

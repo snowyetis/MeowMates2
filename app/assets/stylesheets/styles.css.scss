@@ -1,6 +1,42 @@
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
+//colors
+$white: #fff;
+$color_gallery_approx: #eee;
+$color_mercury_33_approx: rgba(231, 231, 231, 0.33);
+$color_cape_cod_approx: #354242;
+$color_cinnabar_approx: #e74c3c;
+$color_cerise_red_approx: #e43c5c;
+$black_40: rgba(0, 0, 0, 0.4);
+$color_celeste_approx: #cdcdcd;
+$color_alto_approx: #ddd;
+$color_pickled_bluewood_approx: #2c3e50;
+$color_curious_blue_approx: #3498db;
+$color_gray_nurse_approx: #e9e9e9;
+$color_mine_shaft_approx: #333333;
+$color_athens_gray_4_approx: rgba(236, 240, 241, 0.04);
+$color_celeste_33_approx: rgba(204, 204, 204, 0.33);
+$color_storm_dust_approx: #666;
+$red: red;
+$color_japanese_laurel_approx: green;
+$color_blue_charcoal_approx: #040e18;
+$color_outer_space_approx: #2e3537;
+$color_silver_chalice_approx: #aaa;
+$color_bunker_approx: #09121b;
+$site_primary_theme: #e43c5c;
+
+//fonts
+$font_0: Josefin Slab;
+$font_1: serif;
+$font_2: Montserrat;
+$font_3: sans-serif;
+$font_4: Open Sans;
+
+//urls
+$url_0: url(../images/banner-bg.jpg);
+
+
 body {
   padding-top: 100px;
   background : $bg-color;
@@ -33,6 +69,12 @@ h6 {
   &:hover {
     color: $bg-color !important;
   };
+}
+
+.post_form {
+  .btn {
+    background-color: $site_primary_theme;
+  }
 }
 
 .avatar {
@@ -185,4 +227,583 @@ p {
 
 .atwho-view .cur {
   background: $navbar-color;
+}
+
+//@extend-elements
+//original selectors
+//a.btn-banner:hover, a.btn-banner:focus
+%extend_1 {
+	background-color: $color_cerise_red_approx;
+	color: $white;
+	border-color: $color_cinnabar_approx;
+	display: inline-block;
+}
+
+//original selectors
+//.cta2 .btn-default, .cta2 .btn-default:hover, .cta2 .btn-default:focus
+%extend_2 {
+	padding: 10px 25px;
+	background-color: $site_primary_theme;
+	border: 0;
+}
+
+
+.white {
+	color: $white !important;
+}
+h1 {
+	font-size: 36px;
+	&.cta-title {
+		font-size: 43px;
+	}
+}
+.section-padding {
+	padding: 40px 0;
+}
+.main-navigation {
+	border-bottom: 1px solid $color_gallery_approx;
+}
+.navbar-default {
+	background-color: $site_primary_theme;;
+	border-color: $color_mercury_33_approx;
+	padding: 20px 0;
+	.navbar-nav {
+		> .active > a {
+			color: $color_cape_cod_approx;
+			background-color: $site_primary_theme;
+			border-bottom: 2px solid $color_cinnabar_approx;
+			outline: none;
+			&:focus {
+				color: $color_cape_cod_approx;
+				background-color: $white;
+			}
+			&:hover {
+				color: $color_cape_cod_approx;
+				background-color: $white;
+			}
+		}
+		> li > a {
+			color: $color_cape_cod_approx;
+			font-weight: 600;
+			text-transform: uppercase;
+			margin: 0 10px;
+			padding-bottom: 5px;
+			font-size: 14px;
+			&:hover {
+				border-bottom: 2px solid $color_cinnabar_approx;
+				outline: none;
+			}
+			&:focus {
+				border-bottom: 2px solid $color_cinnabar_approx;
+				outline: none;
+			}
+		}
+	}
+	.navbar-brand {
+		color: $color_cerise_red_approx;
+	}
+}
+.navbar-nav {
+	padding-top: 5px;
+}
+.navbar {
+	min-height: inherit;
+	margin-bottom: 0;
+}
+.navbar-brand {
+	height: inherit;
+	font-family: $font_0, $font_1;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 5px;
+	font-size: 42px;
+	margin-top: 5px;
+}
+.jumbotron {
+	background-color: transparent;
+	padding-top: 90px;
+	p.big {
+		line-height: 21px;
+		border-width: 0;
+		margin: 0;
+		padding: 0;
+		letter-spacing: 6px;
+		font-size: 15px;
+		color: $white;
+		text-transform: uppercase;
+		font-weight: 400;
+		// color: $white;
+		filter: drop-shadow(0 1px 1px $black_40);
+		padding-top: 10px;
+	}
+	h1.small {
+		line-height: 88px;
+		border-width: 0;
+		margin: 0;
+		padding: 0;
+		font-family: $font_4, $font_3;
+		font-size: 62px;
+		letter-spacing: 6px;
+		text-transform: uppercase;
+		font-weight: 400;
+		color: $white;
+		filter: drop-shadow(0 1px 1px $black_40);
+	}
+}
+.bold {
+	font-weight: bold;
+}
+.bor-btm {
+	width: 100px;
+	height: 1px;
+	background-color: $color_alto_approx;
+	margin-bottom: 85px;
+}
+.bgblue-dark {
+	background-color: $color_pickled_bluewood_approx;
+}
+.bgblue-light {
+	background-color: $color_curious_blue_approx;
+}
+.bgred {
+	background-color: $color_cinnabar_approx;
+}
+.wrk-title {
+	cursor: pointer;
+}
+.cta-1 {
+	background-color: $color_cerise_red_approx;
+	padding: 40px 0;
+}
+.cta2 {
+	background-color: $color_cerise_red_approx;
+	padding: 40px 0;
+	a {
+		margin-top: 5px;
+	}
+	.btn-default {
+		@extend %extend_2;
+		&:hover {
+			@extend %extend_2;
+		}
+		&:focus {
+			@extend %extend_2;
+		}
+	}
+}
+.pg-titl-bdr-btm {
+	width: 100px;
+	height: 3px;
+	background-color: $color_cerise_red_approx;
+}
+.service-box {
+	margin: 0 0 60px;
+	display: inline-block;
+	.service-icon {
+		width: 75px;
+		height: 75px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 50px;
+		overflow: hidden;
+		border: 1px solid $color_gray_nurse_approx;
+		line-height: 75px;
+		text-align: center;
+		color: $color_cerise_red_approx;
+		font-size: 30px;
+		margin-right: 23px;
+		float: left;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: all 0.5s ease 0s;
+	}
+	.service-text {
+		width: 70%;
+		float: left;
+		margin-bottom: 20px;
+		h3 {
+			margin: 0 0 20px 0;
+			padding: 0;
+			font-size: 18px;
+			line-height: 24px;
+			color: $color_mine_shaft_approx;
+			font-weight: 400;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: all 0.5s ease 0s;
+		}
+	}
+}
+.page-title {
+	margin-bottom: 40px;
+}
+#portfolio {
+	background-color: $color_athens_gray_4_approx;
+}
+.fil-btn {
+	margin-bottom: 30px;
+	.active {
+		background-color: $color_cerise_red_approx;
+	}
+}
+.filter {
+	background-color: $color_pickled_bluewood_approx;
+	color: $white;
+	padding: 15px 30px;
+	border-right: 1px solid $white;
+	display: inline-block;
+	position: relative;
+}
+.filimg {
+	margin-bottom: 30px;
+}
+.img-sec {
+	width: 50%;
+	float: left;
+}
+.fig-caption {
+	width: 50%;
+	float: left;
+	padding: 56px 20px 0;
+	h3 {
+		font-size: 20px;
+		font-family: $font_0, $font_1;
+	}
+	p {
+		font-size: 14px;
+	}
+}
+.team-info {
+	border: 1px solid $color_celeste_33_approx;
+	float: left;
+	width: 100%;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 3px;
+}
+.blue-light {
+	background-color: $color_curious_blue_approx;
+}
+.blue-dark {
+	background-color: $color_pickled_bluewood_approx;
+}
+.red {
+	background-color: $color_cinnabar_approx;
+}
+.marb-20 {
+	margin-bottom: 20px;
+}
+.wd75 {
+	width: 75%;
+	float: left;
+}
+.fnt-24 {
+	font-size: 24px;
+}
+.text-field-box {
+	background: $white;
+	border: 1px solid $color_alto_approx;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 40px;
+	height: 60px;
+	line-height: 60px;
+	text-align: left;
+	color: $color_storm_dust_approx;
+	font-size: 14px;
+	padding: 0 35px;
+	margin-bottom: 30px;
+	width: 100%;
+	outline: none;
+	appearance: none;
+}
+.validation {
+	color: $red;
+	display: none;
+	margin: 0 0 20px;
+	font-weight: 400;
+	font-size: 13px;
+}
+#sendmessage {
+	color: $color_japanese_laurel_approx;
+	border: 1px solid $color_japanese_laurel_approx;
+	display: none;
+	text-align: center;
+	padding: 15px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	&.show {
+		display: block;
+	}
+}
+#errormessage {
+	color: $red;
+	display: none;
+	border: 1px solid $red;
+	text-align: center;
+	padding: 15px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	&.show {
+		display: block;
+	}
+}
+.show {
+	display: block;
+}
+.button-medium {
+	background: $color_cerise_red_approx;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 40px;
+	color: $white;
+	cursor: pointer;
+	display: block;
+	font-family: $font_2, $font_3;
+	font-size: 18px;
+	font-weight: 400;
+	height: 48px;
+	line-height: 48px;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+	width: 200px;
+	appearance: none;
+	border: 1px solid $color_cerise_red_approx;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: none;
+	outline: none;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: all 0.5s ease 0s;
+}
+.footer {
+	background-color: $color_blue_charcoal_approx;
+	h3 {
+		color: $white;
+		padding-bottom: 30px;
+	}
+}
+.footer-bottom {
+	background: $color_bunker_approx;
+	padding: 20px 0;
+}
+.footer_copyright {
+	color: $white;
+	font-size: 16px;
+	margin-bottom: 0;
+	a {
+		color: $color_cerise_red_approx;
+		text-decoration: none;
+	}
+}
+#banner {
+	background: $url_0 no-repeat;
+	background-size: cover;
+	min-height: 500px;
+}
+@media(min-width: 480px) and(max-width: 1023px) {
+	.img-sec {
+		width: 100%;
+		float: left;
+	}
+	.fig-caption {
+		width: 100%;
+		float: left;
+		padding: 56px 20px 20px;
+	}
+}
+@media(min-width: 451px) and(max-width: 768px) {
+	.filter {
+		padding: 5px 18px;
+		margin-bottom: 3px;
+	}
+	.wd75 {
+		width: 100%;
+	}
+	.fig-caption {
+		padding: 56px 20px 20px;
+	}
+}
+@media(min-width: 301px) and(max-width: 450px) {
+	.filter {
+		padding: 3px 14px;
+		margin-bottom: 3px;
+	}
+	.jumbotron {
+		padding-right: 30px;
+		padding-left: 30px;
+		padding: 90px 0 0 20px !important;
+		h1.small {
+			font-size: 44px;
+		}
+	}
+	.fig-caption {
+		padding: 13px 20px 0;
+		h3 {
+			font-size: 19px;
+			font-family: $font_0, $font_1;
+		}
+	}
+	.wd75 {
+		width: 100%;
+	}
+	.button-medium {
+		font-size: 15px;
+		height: 40px;
+		line-height: 40px;
+		width: 150px;
+	}
+	.team-social li {
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		text-align: center;
+	}
+	.service-box .service-text h3 {
+		padding-top: 15px;
+	}
+	h1.cta-title {
+		font-size: 30px;
+	}
+	p.cta-sub-title {
+		font-size: 20px;
+	}
+}
+@media(min-width: 100px) and(max-width: 300px) {
+	.filter {
+		padding: 3px 14px;
+		margin-bottom: 3px;
+	}
+	.img-sec {
+		width: 100%;
+		float: left;
+	}
+	.fig-caption {
+		width: 100%;
+		float: left;
+		padding: 56px 20px 20px;
+	}
+	.jumbotron {
+		padding: 90px 0 0 20px !important;
+		h1.small {
+			font-size: 44px;
+		}
+	}
+	.button-medium {
+		font-size: 15px;
+		height: 40px;
+		line-height: 40px;
+		width: 150px;
+	}
+	h1.cta-title {
+		font-size: 30px;
+	}
+	p.cta-sub-title {
+		font-size: 20px;
+	}
+	.service-box .service-text h3 {
+		padding-top: 15px;
+	}
+	.navbar-default .navbar-nav {
+		> .active > a {
+			text-align: center;
+		}
+		> li > a {
+			text-align: center;
+		}
+	}
+}
+@media(min-width: 300px) and(max-width: 768px) {
+	.navbar-default .navbar-nav {
+		> .active > a {
+			text-align: center;
+			border: 0;
+		}
+		> li > a {
+			text-align: center;
+			border: 0;
+			&:hover {
+				border: 0;
+			}
+		}
+	}
+}
+.nav > li > a {
+	padding: 0;
+}
+a.btn-banner {
+	border: 1px solid $color_celeste_approx;
+	padding: 12px 22px;
+	line-height: 0;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 3px;
+	font-family: $font_2, $font_3;
+	font-weight: 400;
+	font-size: 11px;
+	text-transform: uppercase;
+	color: $white;
+	letter-spacing: 1px;
+	display: inline-block;
+	margin-top: 95px;
+	i {
+		padding-left: 10px;
+	}
+	&:hover {
+		@extend %extend_1;
+	}
+	&:focus {
+		@extend %extend_1;
+	}
+}
+.container .jumbotron {
+	padding-right: 60px;
+	padding-left: 0;
+}
+.container-fluid .jumbotron {
+	padding-right: 60px;
+	padding-left: 0;
+}
+p.cta-sub-title {
+	font-size: 28px;
+}
+#Container .mix {
+	display: none;
+}
+.team-social li {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	a {
+		color: $white;
+	}
+}
+.form-sec textarea {
+	height: 220px;
+}
+.footer_social ul {
+	list-style: outside none none;
+	margin: 0;
+	padding: 0;
+	li {
+		margin: 2px;
+		display: inline-block;
+		a {
+			background: $color_outer_space_approx none repeat scroll 0 0;
+			border: 1px solid $color_outer_space_approx;
+			//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: 0 0 0 7px transparent;
+			color: $color_silver_chalice_approx;
+			display: block;
+			font-size: 14px;
+			height: 40px;
+			line-height: 21px;
+			padding: 9px 13px;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: all 0.4s ease 0s;
+			width: 40px;
+		}
+	}
+}
+
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }

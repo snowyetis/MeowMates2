@@ -1,5 +1,14 @@
-<% if animal %>
-  <%= link_to animal_path(animal) do %>
-    <%= image_tag animal.animal_intro_avatar.url || 'animal_intro_avatar.jpg', class: 'avatar' %>
+<% if current_user.blank? %>
+
+  <% if gallery_view %>
+    <%= image_tag animal.animal_intro_avatar || 'avatar.jpg', class: 'avatar' %>
+  <% end %>
+
+<% else %>
+
+  <% if animal %>
+    <%= link_to animal_path(animal) do %>
+      <%= image_tag animal.animal_intro_avatar || 'avatar.jpg', class: 'avatar' %>
+    <% end %>
   <% end %>
 <% end %>

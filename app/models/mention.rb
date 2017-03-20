@@ -19,6 +19,8 @@ private
       content_html
     elsif is_a?(Comment)
       comment_html
+    elsif is_a?(Animal)
+      animal_html
     end
   end
 
@@ -31,6 +33,7 @@ private
       new_content = html_type.gsub!(friend_name, "<a href='/users/#{User.where(name: friend_name).first.id}'>#{friend_name}</a>")
       self.content = new_content if is_a?(Post)
       self.comment = new_content if is_a?(Comment)
+      self.animal = new_content if is_a?(Animal)
     end
   end
 

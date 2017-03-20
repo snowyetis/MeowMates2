@@ -1,21 +1,15 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.0'
-
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0'
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
-
-# Used to implement at.js for auto complete mentions/emojis
 gem 'jquery-atwho-rails'
+gem 'chosen-rails'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'jquery-turbolinks'
 
-# Use twitter bootstrap sass
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
@@ -43,6 +37,7 @@ end
 
 gem 'devise'
 gem 'carrierwave'
+gem "mini_magick"
 gem 'friendly_id', '~> 5.0'
 
 gem 'will_paginate', '~> 3.1.0'
@@ -52,6 +47,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts_as_commentable'
 gem 'acts_as_follower'
 gem 'counter_culture', '~> 0.1.33'
+gem "mailboxer"
 
 gem 'faker'
 gem 'populator'

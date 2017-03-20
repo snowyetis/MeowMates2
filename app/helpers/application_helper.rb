@@ -18,4 +18,14 @@ module ApplicationHelper
   def activity_resources_exist?(activity)
     activity && activity.trackable && activity.owner
   end
+
+  def avatar_for(user, sizing, title = user.name)
+    # image_tag avatar.url(user.email, size: sizing), title: title, class: 'img-rounded'
+    image_tag user.avatar.url(:thumb)
+  end
+
+  def avatar_for_thumb(user)
+    image_tag user.avatar.thumb
+  end
+
 end
