@@ -20,8 +20,7 @@ module ApplicationHelper
   end
 
   def avatar_for(user)
-    # image_tag avatar.url(user.email, size: sizing), title: title, class: 'img-rounded'
-    image_tag user.avatar.url(:thumb)
+    image_tag user.avatar.thumb
   end
 
   def avatar_for_thumb(user)
