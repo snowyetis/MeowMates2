@@ -17,6 +17,6 @@ class Animal < ApplicationRecord
   self.per_page = 10
 
   # validates_presence_of :content
-  # validates_presence_of :user
+  validates_presence_of :user
 
 end
