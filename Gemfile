@@ -33,6 +33,8 @@ group :production do
   gem 'rails_12factor'
   gem 'fog'
   gem 'fog-aws'
+  gem 'scout_apm'
+  gem 'informant-rails'
 end
 
 gem 'devise'
