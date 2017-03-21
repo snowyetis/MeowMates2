@@ -1,6 +1,6 @@
 common: &defaults
   name: <%= "meowmates (#{Rails.env})" %>
-  key: <%= SCOUT_KEY %>
+  key: <%= ENV["SCOUT_KEY"] %>
   log_level: info
   monitor: true
 
