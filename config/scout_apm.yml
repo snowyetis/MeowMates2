@@ -1,0 +1,19 @@
+common: &defaults
+  name: <%= "meowmates (#{Rails.env})" %>
+  key: <%= SCOUT_KEY %>
+  log_level: info
+  monitor: true
+
+production:
+  <<: *defaults
+
+development:
+  <<: *defaults
+  monitor: false
+
+test:
+  <<: *defaults
+  monitor: false
+
+staging:
+  <<: *defaults
