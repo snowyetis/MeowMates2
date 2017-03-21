@@ -19,9 +19,10 @@ end
 def create
   @animals  = current_user.animals.new(animal_params)
 
-  if @animals.save!
-    @animals.animal_intro_avatar.url
-    
+  if @animals.save
+    # TODO: I don't think I need this
+    # @animals.animal_intro_avatar.url
+
     redirect_to root_path
   else
     redirect_to root_path, notice: @animals.errors.full_messages.first
