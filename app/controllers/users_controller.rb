@@ -20,8 +20,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.avatar.resize = "50x50"
-    @user.avatar.format = "png"
+    # TODO not needed? All image functionality resides in the uploader module
+    # @user.avatar.resize = "50x50"
+    # @user.avatar.format = "png"
 
     if @user.update(user_params)
       redirect_to user_path(@user)

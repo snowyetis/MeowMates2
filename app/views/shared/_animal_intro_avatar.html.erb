@@ -1,14 +1,38 @@
 <% if @gallery_view %>
   <% if animal %>
-    <%= image_tag animal.animal_intro_avatar.url(:gallery_thumb), class: 'img-responsive' %>
+    <div class="item">
+      <div class="photo">
+        <div class="img">
+          <% if animal.animal_intro_avatar.url.present? %>
+            <% image_tag animal.animal_intro_avatar.url || 'gallery1.jpg' %>
+          <% end %>
+          <div class="over">
+            <div class="func">
+              <a href="#">
+                <i class="icon s7-link"></i>
+              </a>
+              <a href="assets/img/gallery1.jpg" class="image-zoom">
+                <i class="icon s7-search"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="description">
+          <div class="icon"><a href="#"><i class="s7-like"></i></a></div>
+          <div class="desc">
+            <h4><%= animal.animalName %></h4>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 
 <% else %>
 
   <% if animal %>
     <%= link_to animal_path(animal) do %>
-      <%= image_tag animal.animal_intro_avatar || 'avatar.jpg', class: 'avatar' %>
-    <% end %>
+    <%= image_tag animal.animal_intro_avatar || 'avatar.jpg', class: 'avatar' %>
   <% end %>
+<% end %>
 
 <% end %>

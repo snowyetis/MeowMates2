@@ -5,7 +5,7 @@
     <div class="form-group">
       <%= f.label :animal_intro_avatar %>
       <br>
-      
+
       <br>
       <br>
       <%= f.file_field :animal_intro_avatar %>
@@ -24,12 +24,16 @@
       <%= f.text_field :dob,  class: "editable form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :shots %>
-      <%= f.text_field :shots, class: "editable form-control" %>
+      <div class="am-checkbox">
+        <%= f.label :shots %>
+        <%= f.check_box :shots %>
+      </div>
     </div>
     <div class="form-group">
-      <%= f.label :fixed %>
-      <%= f.text_field :fixed, class: "editable form-control" %>
+      <div class="am-checkbox">
+        <%= f.label :fixed %>
+        <%= f.check_box :fixed %>
+      </div>
     </div>
     <div class="form-group">
       <div id="animal-content" contenteditable="true" class="editable form-control input-mentionable" placeholder="Tell Us About your Pet"></div>

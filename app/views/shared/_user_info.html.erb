@@ -1,33 +1,77 @@
-<div id="user-info" class="well">
-  <div class="text-center">
-    <%= render 'shared/avatar', user: @user %><br>
-    <h5><%= link_to @user.name, @user %></h5>
-  </div>
-  <h5>
-    <%= fa_icon 'paw' %>
-    <%= pluralize(@user.animals_count, 'animals') %>
-  </h5>
-  <h5>
-    <%= fa_icon 'shield' %>
-    <%= pluralize(@user.posts_count, 'post') %>
-  </h5>
-  <% if @user.dob.present? %>
-    <h5>
-      <%= fa_icon @user.sex %>
-      <%= "#{pluralize(age(@user.dob), 'year')} old" %>
-    </h5>
-  <% end %>
-  <% if @user.location.present? %>
-    <h5>
-      <%= fa_icon 'map-marker' %>
-      <%= @user.location %>
-    </h5>
-  <% end %>
-  <br>
-  <div class="text-center">
-    <% unless is_current_user?(@user) %>
-      <%= render 'follows/form', user: @user %>
-      <h6><%= 'Follows you' if current_user.followed_by?(@user) %></h6>
-    <% end %>
-  </div>
-</div>
+
+                <div class="info-block panel panel-default">
+                    <div class="panel-heading">
+                      <h4>About me</h4>
+                    </div>
+                  <div class="panel-body">
+                    <span class="description"></span>
+                    <table class="no-border no-strip skills">
+                      <tbody class="no-border-x no-border-y">
+                        <tr>
+                          <td class="item">
+                              <%= fa_icon 'user' %>
+                          </td>
+                          <td>
+                              <%= link_to @user.name, @user %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="item">
+                              <%= fa_icon 'paw' %>
+                          </td>
+                          <td>
+                              <%= pluralize(@user.animals_count, 'animals') %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="item">
+                              <%= fa_icon 'shield' %>
+                          </td>
+                          <td>
+                              <%= pluralize(@user.posts_count, 'post') %>
+                          </td>
+                        </tr>
+                        <tr>
+                            <% if @user.sex.present? %>
+                              <td class="item">
+                                <%= fa_icon @user.sex %>
+                              </td>
+                              <td>
+                                <%= @user.sex %>
+                              </td>
+                            <% end %>
+                          </tr>
+                            <% if @user.dob.present? %>
+                            <tr>
+                              <td>
+                                <%= fa_icon 'calendar' %>
+                              </td>
+                              <td>
+                                <%= "#{pluralize(age(@user.dob), 'year')} old" %>
+                              </td>
+                            </tr>
+                            <% end %>
+                            <% if @user.location.present? %>
+                            <tr>
+                              <td class="item">
+                                <%= fa_icon 'map-marker' %>
+                              </td>
+                              <td>
+                                <%= @user.location %>
+                              </td>
+                            </tr>
+                            <% end %>
+                        <tr>
+                          <td class="item">
+                            <div class="text-center">
+                              <% unless is_current_user?(@user) %>
+                                <%= render 'follows/form', user: @user %>
+                                <h6><%= 'Follows you' if current_user.followed_by?(@user) %></h6>
+                              <% end %>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>

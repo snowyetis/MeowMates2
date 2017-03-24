@@ -1,12 +1,15 @@
 <% if activity_resources_exist?(activity) %>
-  <div class="activity-comment">
-    <div class="info">
+<div class="timeline-date"><span><%= activity.created_at %></span></div>
+  <div class="timeline-content">
+    <div class="timeline-avatar">
       <%= render 'shared/avatar', user: activity.owner %>
+    </div
+    <div class="timeline-header">
       <h4 class="name"><%= link_to activity.owner.name, user_path(activity.owner) %></h4>
       <span class="action">commented on a <%= link_to 'post', activity.trackable.commentable %></span>
     </div>
-    <div class="content">
-      <h4><small><%= activity.trackable.comment_html %></small></h4>
+    <p class="timeline-activity">
+      <%= activity.trackable.comment_html %>
     </div>
     <%= render 'shared/created_at', activity: activity %>
   </div>

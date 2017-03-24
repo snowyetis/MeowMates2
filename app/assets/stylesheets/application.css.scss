@@ -15,8 +15,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "s7";
+
 @import "variables";
+
 @import "jquery.datetimepicker";
 @import "jquery.atwho";
 @import 'chosen';
+@import "nanoscroller";
+@import "magnific-popup";
+
 @import "*";

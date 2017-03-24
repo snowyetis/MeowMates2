@@ -18,4 +18,13 @@
 //= require bindWithDelay
 //= require jquery.datetimepicker
 //= require chosen-jquery
+//= require jquery.nanoscroller
+//= require parsley/parsley.min
+//= require jquery.magnific-popup.min
+//= require masonry.pkgd.min
+//= require imagesloaded.pkgd.min
 //= require_tree .
+
+$(document).ready(function(){
+  App.init();
+});

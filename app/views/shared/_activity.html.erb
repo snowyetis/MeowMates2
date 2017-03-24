@@ -1,21 +1,7 @@
 <% if activity_resources_exist?(activity) %>
-  <% if @front %>
-    <div class="autoplay">
-      <div class="col-md-6">
-        <div class="team-info">
-          <!-- <div class="img-sec"> -->
-            <div id="activity-<%= activity.id %>" class="activity">
-                <%= render_activity(activity) %>
-            </div>
-          <!-- </div> -->
-        </div>
+      <div id="activity-<%= activity.id %>" class="activity">
+        <li class="timeline-item">
+            <%= render_activity(activity) %>
+          </li>
       </div>
-    </div>
-  <% else %>
-      <div class="col-md-12">
-        <div id="activity-<%= activity.id %>" class="activity">
-          <%= render_activity(activity) %>
-        </div>
-      </div>
-  <% end %>
 <% end %>

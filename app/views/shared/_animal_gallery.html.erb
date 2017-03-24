@@ -4,26 +4,10 @@
       <%= render_activity(activity) %>
     </div>
   </div>
-
-  <% else %>
-
-  <!-- <div class="autoplay">
-    <div class="col-md-6">
-      <div class="team-info"> -->
-      <div class="autoplay">
-        <% for animal in @animals %>
-          <!-- <%= link_to show_gallery_detail_path(animal) do %> -->
-          <div class="col-md-3">
-            <!-- <div class="team-info">
-              <div class="img-sec"> -->
-                <%= render 'shared/animal_intro_avatar', animal: animal %>
-              <!-- </div>
-            </div> -->
-          </div>
-          <!-- <% end %> -->
-        <% end %>
-       </div>
-    <!-- </div>
-  </div>  -->
-
+<% else %>
+    <div class="gallery-container">
+      <% for animal in @animals %>
+        <%= render 'shared/animal_intro_avatar', animal: animal %>
+      <% end %>
+    </div>
 <% end %>

@@ -1,10 +1,30 @@
 <div class="row">
-  <% for animal in @animals %>
-    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-      <%= link_to show_gallery_detail_path(animal), class: "thumbnail" do %>
-        <%= image_tag animal.animal_intro_avatar, class: "img-responsive" %>
-      <% end %>
-      <h5><%= animal.animalName %></h5>
-    </div>
-  <% end %>
+  <div class="gallery-container">
+    <% for animal in @animals %>
+      <div class="item">
+        <div class="photo">
+          <div class="img">
+            <%= link_to show_gallery_detail_path(animal) do %>
+              <%= image_tag animal.animal_intro_avatar %>
+            <% end %>
+          <div class="over">
+            <div class="func">
+              <a href="#"><i class="icon s7-link"></i>
+              </a>
+              <a href="assets/img/gallery1.jpg" class="image-zoom">
+                <i class="icon s7-search"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="description">
+          <div class="icon"><a href="#"><i class="s7-like"></i></a></div>
+            <div class="desc">
+              <h5><%= animal.animalName %></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

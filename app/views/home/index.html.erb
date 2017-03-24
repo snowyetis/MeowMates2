@@ -1,25 +1,66 @@
-<div class="row">
-  <div class="col-lg-3">
-    <%= render 'shared/user_info' %>
-  </div>
-  <div id="newsfeed" class="col-lg-6">
-    <%= render 'posts/form' %>
-    <br>
-    <div id="animal-form" class="well">
-      <%= render 'animals/adoption_form' %>
+<!-- <div class="row"> -->
+<div class="user-profile">
+  <div class="user-display">
+    <div class="photo">
+      <%= image_tag 'cover' %>
     </div>
-    <div id="activities">
-      <% if @activities.empty? %>
-        <div class="well">
-          <%= render('shared/no_resource', resources: 'Activities') %>
-        </div>
-      <% else %>
-        <%= render_activities(@activities, layout: '/shared/activity') %>
-      <% end %>
+    <div class="bottom">
+      <div class="user-avatar">
+        <span class="status"></span>
+        <%= image_tag 'avatar2.jpg' %>
+      </div>
+      <div class="user-info">
+        Lorem iopd jkd odoi jk jk jhkhjh jeje lkooii djskjde djsloem
+      </div>
     </div>
-    <%= render 'shared/paginate', resources: @activities %>
-  </div>
-  <div class="col-lg-3">
-    <%= render 'shared/links' %>
   </div>
 </div>
+<div class="row">
+  <div class="col-sm-12 col-md-3 col-lg-3">
+    <%= render 'shared/user_info' %>
+  </div>
+
+  <div class="col-sm-12 col-md-8 col-lg-7">
+    <div class="tab-container">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#post" data-toggle="tab" aria-expanded="true">Write a Post</a></li>
+        <li class=""><a href="#animals" data-toggle="tab" aria-expanded="false">Post an Animal</a></li>
+      </ul>
+      <div class="tab-content">
+          <div id="post" class="tab-pane cont active">
+            <%= render 'posts/form' %>
+          </div>
+          <div id="animals" class="tab-pane cont">
+            <%= render 'animals/adoption_form' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- </div>
+  <div class="row"> -->
+    <div class="col-sm-12 col-md-3 col-lg-3">
+      <%= render 'shared/links' %>
+    </div>
+    <div id="newsfeed" class="col-sm-12 col-md-7 col-lg-7">
+
+        <!-- <div class="col-md-12"> -->
+          <div id="activities">
+            <% if @activities.empty? %>
+              <div class="well">
+                <%= render('shared/no_resource', resources: 'Activities') %>
+              </div>
+            <% else %>
+              <ul class="timeline">
+                <%= render_activities(@activities, layout: '/shared/activity') %>
+              </ul>
+            <% end %>
+          </div>
+        <%= render 'shared/paginate', resources: @activities %>
+      </div>
+
+  </div>
+<!-- </div> -->
+  <!-- <div class="col-lg-3">
+  <% render 'shared/links' %>
+</div> -->
+<!-- </div> -->

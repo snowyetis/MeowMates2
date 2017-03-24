@@ -1,5 +1,13 @@
 <% if activity_resources_exist?(activity) %>
-  <div id="post-<%= activity.trackable.id %>" class="activity-post">
-    <%= render activity.trackable, remote: true %>
+<div class="timeline-date"><span><%= activity.created_at %></span></div>
+  <div class="timeline-content">
+    <div class="timeline-avatar">
+      <%= render 'shared/avatar', user: activity.owner %>
+    </div>
+    <div class="timeline-header">
+      <div id="post-<%= activity.trackable.id %>" class="activity-post">
+        <%= render activity.trackable, remote: true %>
+      </div>
+    </div>
   </div>
 <% end %>
