@@ -2,15 +2,15 @@
 <div class="user-profile">
   <div class="user-display">
     <div class="photo">
-      <%= image_tag 'cover' %>
+      <%= render 'shared/cover', user: current_user %>
     </div>
     <div class="bottom">
       <div class="user-avatar">
         <span class="status"></span>
-        <%= image_tag 'avatar2.jpg' %>
+        <%= render 'shared/avatar', user: current_user %>
       </div>
       <div class="user-info">
-        Lorem iopd jkd odoi jk jk jhkhjh jeje lkooii djskjde djsloem
+        <%= current_user.about %>
       </div>
     </div>
   </div>

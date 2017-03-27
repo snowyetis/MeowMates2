@@ -1,4 +1,4 @@
-<% if @gallery_view %>
+<!-- <% if @gallery_view %> -->
   <% if animal %>
     <div class="item">
       <div class="photo">
@@ -27,12 +27,12 @@
     </div>
   <% end %>
 
-<% else %>
+<!-- <% else %>
 
   <% if animal %>
-    <%= link_to animal_path(animal) do %>
-    <%= image_tag animal.animal_intro_avatar || 'avatar.jpg', class: 'avatar' %>
+    <% link_to animal_path(animal) do %>
+    <% image_tag animal.animal_intro_avatar || 'avatar.jpg', class: 'avatar' %>
   <% end %>
-<% end %>
+<% end %> -->
 
 <% end %>
