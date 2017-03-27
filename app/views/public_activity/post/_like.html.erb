@@ -1,5 +1,5 @@
 <% if activity_resources_exist?(activity) %>
-<div class="timeline-date"><span><%= activity.created_at %></span></div>
+<div class="timeline-date"><span><%= render 'shared/date', activity: activity %></span></div>
 <div class="timeline-content">
   <div class="timeline-avatar">
     <%= render 'shared/avatar', user: activity.owner %>

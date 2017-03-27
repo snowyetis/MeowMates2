@@ -45,6 +45,9 @@ Rails.application.routes.draw do
   match :animal_like, to: 'likes#animal_create', as: :animal_like, via: :post
   match :animal_unlike, to: 'likes#animal_destroy', as: :animal_unlike, via: :post
 
+  # match :animal_adoption, to: 'animals#send_adopt_notification', as: :animal_adoption, via: :post
+  match :adoption_create, to: 'messages#adoption_create', as: :adoption_create, via: :post
+
   match :find_friends, to: 'home#find_friends', as: :find_friends, via: :get
   match :find_animals, to: 'home#find_animals', as: :find_animals, via: :get
 

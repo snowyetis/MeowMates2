@@ -1,7 +1,14 @@
 <div class="row">
+  <h4>Filter Animals</h4>
+  <div class="xs-mb-15">
+    <div class="btn-group-justified">
+      <a id="image_filter_all" class="btn btn-primary btn-rad1" data-filter="">Show All</a>
+      <a id="image_filter_no_image" class="btn btn-default" data-filter="true">Show Animals with Images</a>
+    </div>
+  </div>
   <div class="gallery-container">
     <% for animal in @animals %>
-      <div class="item">
+      <div data-filter="<%= @image %>" class="item">
         <div class="photo">
           <div class="img">
             <%= image_tag animal.animal_intro_avatar %>

@@ -21,7 +21,12 @@ class User < ActiveRecord::Base
   mount_uploader :cover, CoverUploader
 
   def mailboxer_email(object)
-    :email
+    if object.class==Mailboxer::Notification
+      return nil
+    else
+      :email
+    end
+
   end
 
   validates_presence_of :name

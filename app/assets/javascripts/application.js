@@ -23,6 +23,7 @@
 //= require jquery.magnific-popup.min
 //= require masonry.pkgd.min
 //= require imagesloaded.pkgd.min
+//= require masonry.filter
 //= require_tree .
 
 $(document).ready(function(){

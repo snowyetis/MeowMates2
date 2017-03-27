@@ -1,15 +1,22 @@
 class AnimalsController < ApplicationController
 before_action :authenticate_user!
-before_action :set_animal, only: [:show, :edit, :update, :destroy, :show_gallery_detail]
+before_action :set_animal, only: [:show, :edit, :update, :destroy, :show_gallery_detail, :send_adopt_notification]
 
 def index
   @galleryView = true
   @animals = Animal.all
+  @animals.each do |animal|
+    if animal.animal_intro_avatar.url.blank?
+      @image = false
+    else
+      @image = true
+    end
+  end
 
 end
 
 def show
-  @activities = PublicActivity::Activity.where(owner: @user).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+  @activities = PublicActivity::Activity.where(owner: @user, trackable_type: 'Animal').order(created_at: :desc).paginate(page: params[:page], per_page: 10)
 end
 
 def show_gallery_detail

@@ -2,7 +2,9 @@
   <div class="col-xs-9">
     <%= image_tag(@animal.animal_intro_avatar.url(:gallery_thumb)) %>
     <div class="pull-right">
-      <%= button_tag 'Adopt!', class: 'btn btn-warning' %>
+      <%= button_to adoption_create_path(@animal), method: :post, class: 'btn btn-warning' do %>
+        Adopt!
+      <% end %>
     </div>
     <hr />
     <div class="well">
