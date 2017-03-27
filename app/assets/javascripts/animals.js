@@ -15,8 +15,6 @@ $(document).ready(function(){
     readURL(this, preview);
   });
 
-  
-
   var self = $("#masonry");
   self.imagesLoaded(function () {
     self.masonry({

@@ -32,18 +32,15 @@ class UsersController < ApplicationController
   end
 
   def animals
-    # @animals = @user.user_animals.paginate(page: params[:page])
-    @animals = current_user.animals.paginate(page: params[:page])
-    # @animals = @user.animals.paginate(page: params[:page])
-
+    @animals = current_user.animals.paginate(page: params[:page]).find_each.lazy
   end
 
   def friends
-    @friends = @user.following_users.paginate(page: params[:page])
+    @friends = @user.following_users.paginate(page: params[:page]).find_each.lazy
   end
 
   def followers
-    @followers = @user.user_followers.paginate(page: params[:page])
+    @followers = @user.user_followers.paginate(page: params[:page]).find_each.lazy
   end
 
   def mentionable
