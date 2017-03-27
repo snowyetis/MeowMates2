@@ -1,2 +1,0 @@
-$("#<%= @likeable_type.downcase %>-<%= @likeable.id %> .animal-like").html("<%=j render('likes/animal_form', likeable: @likeable) %>");
-$("#<%= @likeable_type.downcase %>-<%= @likeable.id %> .animal-like-count").html("<%= pluralize(@likeable.cached_votes_up, 'like') %>");

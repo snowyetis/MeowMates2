@@ -3,7 +3,9 @@ class AnimalsController < ApplicationController
 before_action :set_animal, only: [:show, :edit, :update, :destroy, :show_gallery_detail]
 
 def index
+  @galleryView = true
   @animals = Animal.all
+
 end
 
 def show
@@ -22,7 +24,6 @@ def create
   if @animals.save
     # TODO: I don't think I need this
     # @animals.animal_intro_avatar.url
-
     redirect_to root_path
   else
     redirect_to root_path, notice: @animals.errors.full_messages.first

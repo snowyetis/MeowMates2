@@ -4,21 +4,25 @@
       <div class="photo">
         <div class="img">
           <% if animal.animal_intro_avatar.url.present? %>
-            <% image_tag animal.animal_intro_avatar.url || 'gallery1.jpg' %>
+            <%= image_tag animal.animal_intro_avatar.url %>
           <% end %>
           <div class="over">
             <div class="func">
               <a href="#">
                 <i class="icon s7-link"></i>
               </a>
-              <a href="assets/img/gallery1.jpg" class="image-zoom">
+              <%= link_to show_gallery_detail_path(animal.id) do %>
                 <i class="icon s7-search"></i>
-              </a>
+              <% end %>
             </div>
           </div>
         </div>
         <div class="description">
-          <div class="icon"><a href="#"><i class="s7-like"></i></a></div>
+          <div class="icon">
+            <a href="#">
+              <i class="s7-like"></i>
+            </a>
+        </div>
           <div class="desc">
             <h4><%= animal.animalName %></h4>
           </div>
@@ -35,4 +39,6 @@
   <% end %>
 <% end %> -->
 
+<!-- <a href="assets/img/gallery1.jpg" class="image-zoom"> -->
+<!-- </a> -->
 <% end %>

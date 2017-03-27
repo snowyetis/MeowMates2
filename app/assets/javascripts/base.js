@@ -429,6 +429,13 @@ var App = (function () {
     });
   }
 
+  function openImage(openerElement) {
+      // openerElement is the element on which popup was initialized, in this case its <a> tag
+      // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+    var parent = $(openerElement).parents("div.img");
+    return parent;
+  }
+
 function registerMasonry() {
 
   var $container;
@@ -443,6 +450,9 @@ function registerMasonry() {
     itemSelector: '.item'
   });
 
+  var openerElement = $(this);
+  openImage(openerElement);
+
   //Resizes gallery items on sidebar collapse
   $("#sidebar-collapse").click(function() {
       $container.masonry();
@@ -455,7 +465,6 @@ function registerMasonry() {
       enabled: true, // By default it's false, so don't forget to enable it
       duration: 300, // duration of the effect, in milliseconds
       easing: 'ease-in-out', // CSS transition easing function
-
     }
   });
 
@@ -471,7 +480,6 @@ function registerMasonry() {
   // }
 
 }
-
   //Wait for final event on window resize
   var waitForFinalEvent = (function () {
     var timers = {};

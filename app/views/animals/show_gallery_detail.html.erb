@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-xs-9">
     <%= image_tag(@animal.animal_intro_avatar.url(:gallery_thumb)) %>
+    <div class="pull-right">
+      <%= button_tag 'Adopt!', class: 'btn btn-warning' %>
+    </div>
     <hr />
     <div class="well">
       <p><b>Description: </b><%= @animal.content %></p>
@@ -8,11 +11,12 @@
   </div>
 
   <div class="col-xs-3">
+    <p><b>Owner's Name: </b><%= current_user.name %>
     <p><b>Name: </b><%= @animal.animalName %></p>
     <p><b>Gender: </b><%= @animal.gender %></p>
     <p><b>Date of Birth: </b><%= @animal.dob %></p>
-    <p><b>Fixed: </b><%= @animal.fixed %></p>
-    <p><b>Shots: </b><%= @animal.shots %></p>
+    <p><b>Fixed: </b><%= t @animal.fixed.class %></p>
+    <p><b>Shots: </b><%= t @animal.shots.class %></p>
 
   </div>
 </div>
