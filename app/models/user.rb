@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   has_many :animals
 
   mount_uploader :avatar, AvatarUploader
-  mount_uploader :cover, AvatarUploader
+  mount_uploader :cover, CoverUploader
 
   def mailboxer_email(object)
     :email
