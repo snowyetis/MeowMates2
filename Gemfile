@@ -29,13 +29,13 @@ end
 
 group :production do
   gem 'pg'
-  # gem 'unicorn'
   gem 'puma'
   gem 'rails_12factor'
   gem 'fog'
   gem 'fog-aws'
   gem 'scout_apm'
   gem 'informant-rails'
+  gem 'tunemygc'
 end
 
 gem 'devise'
@@ -45,7 +45,6 @@ gem 'friendly_id', '~> 5.0'
 
 gem 'will_paginate', '~> 3.1.0'
 gem 'public_activity'
-
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts_as_commentable'
 gem 'acts_as_follower'
