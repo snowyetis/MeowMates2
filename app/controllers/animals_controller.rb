@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-# before_action :authenticate_user!
+before_action :authenticate_user!
 before_action :set_animal, only: [:show, :edit, :update, :destroy, :show_gallery_detail]
 
 def index
@@ -24,9 +24,9 @@ def create
   if @animals.save
     # TODO: I don't think I need this
     # @animals.animal_intro_avatar.url
-    redirect_to root_path
+    redirect_to root_path, notice: @animals.animalName + " has been posted, successfully."
   else
-    redirect_to root_path, notice: @animals.errors.full_messages.first
+    redirect_to root_path, error: @animals.errors.full_messages.first
   end
 end
 

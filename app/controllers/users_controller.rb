@@ -5,7 +5,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user,  except: [:animals]
-  # before_action :set_user_animals, only: [:animals]
   before_action :check_ownership, only: [:edit, :update]
   respond_to :html, :js
 
@@ -20,14 +19,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    # TODO not needed? All image functionality resides in the uploader module
-    # @user.avatar.resize = "50x50"
-    # @user.avatar.format = "png"
-
     if @user.update(user_params)
       redirect_to user_path(@user)
+      flash[:notice] = "Your profile has been updated."
     else
       render :edit
+      flash[:error] = "There was an error while updating your profile."
     end
   end
 

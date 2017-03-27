@@ -1,6 +1,5 @@
 <% if user.cover.url.blank? %>
   <%= image_tag 'profile', class: 'cover' %>
 <% else %>
-  <!-- <div class="cover" style="background-image: url(<%= user.cover.url(:resized_cover) %>);"></div> -->
-  <div class="cover"><%= image_tag user.cover.url(:resized_cover) %></div>
+  <div class="cover"><%= image_tag user.cover.url(:resized_cover), class: 'cover-image' %></div>
 <% end %>

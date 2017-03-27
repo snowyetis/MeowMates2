@@ -12,7 +12,7 @@ class Animal < ApplicationRecord
   # default_scope -> { order('created_at DESC') }
 
   # mount_uploader :avatar, AvatarUploader, mount_on: :animal_intro_avatar
-  mount_uploader :animal_intro_avatar, AvatarUploader
+  mount_uploader :animal_intro_avatar, AnimalAvatarUploader
   # attr_accessor :file
   self.per_page = 10
 

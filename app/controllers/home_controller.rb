@@ -11,17 +11,12 @@ class HomeController < ApplicationController
     @animal = Animal.new
     @friends = @user.all_following.unshift(@user)
     @activities = PublicActivity::Activity.where(owner_id: @friends).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
-
-    # Display animals posted by user.
-    # @animals = current_user.animals.where(user_id: current_user.id)
   end
 
   def front
-    # @activities = PublicActivity::Activity.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
     @front = true
     @gallery_view = true
     @animals = Animal.order("RANDOM()").limit(10) # SQLite abd PostgresSQL syntax
-    # @activities = PublicActivity::Activity.where(key: 'animal.create').order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   def find_friends
@@ -33,7 +28,6 @@ class HomeController < ApplicationController
 
   def set_user
     @user = current_user
-    # @animal = current_user.animals
   end
 
 end
