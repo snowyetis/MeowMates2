@@ -20,7 +20,7 @@ class HomeController < ApplicationController
   end
 
   def find_friends
-    @friends = @user.all_following
+    @friends = User.includes(:follows)
     @users =  User.where.not(id: @friends.unshift(@user)).paginate(page: params[:page])
   end
 
