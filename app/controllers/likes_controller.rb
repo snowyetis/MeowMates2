@@ -18,17 +18,6 @@ class LikesController < ApplicationController
     activity.destroy if activity.present?
   end
 
-  def animal_create
-    @likeable.liked_by current_user
-    @likeable.create_activity(:like, owner: current_user)
-  end
-
-  def animal_destroy
-    @likeable.disliked_by current_user
-    activity = PublicActivity::Activity.find_by_trackable_id_and_key(@likeable.id, "#{@likeable_type.downcase}.like")
-    activity.destroy if activity.present?
-  end
-
   private
 
   def find_likeable
