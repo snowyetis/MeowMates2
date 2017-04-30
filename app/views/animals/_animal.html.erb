@@ -5,7 +5,7 @@
   <div class="content">
     <% if animal.animal_intro_avatar.present? %>
       <div class="attachment">
-        <%= image_tag animal.animal_intro_avatar %>
+        <%= image_tag animal.animal_intro_avatar.url %>
       </div>
     <% end %>
     <%= render 'shared/created_at', activity: animal %>
