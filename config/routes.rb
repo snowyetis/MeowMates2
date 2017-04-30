@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :notifications
+
   resources :messages, only: [:new, :create]
 
   get 'show_gallery_detail/:id', to: 'animals#show_gallery_detail', as: 'show_gallery_detail'

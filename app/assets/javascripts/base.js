@@ -453,6 +453,10 @@ function registerMasonry() {
   var openerElement = $(this);
   openImage(openerElement);
 
+  $container.imagesLoaded( function() {
+     $container.masonry();
+   });
+
   //Resizes gallery items on sidebar collapse
   $("#sidebar-collapse").click(function() {
       $container.masonry();

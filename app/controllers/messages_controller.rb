@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
-
+  # TODO: Keep to look up animals per notification.
+  # before_action :set_animal, only: [:adoption_create]
 
  def new
  end
@@ -13,19 +14,14 @@ class MessagesController < ApplicationController
  end
 
  def adoption_create
-
-   notification = Mailboxer::NotificationBuilder.new({
-      type: Mailboxer::Notification,
-      sender_type: 'User',
-      sender_id: current_user.id,
-      recipients: User.where(id: params['recipients']),
-      subject: "has sent you an adoption request",
-      body: "has sent you an adoption request"
-     }).build
-
-     notification.deliver
+     @user = User.find_by(id: params[:user_id])
+     @user.notify("An adoption request has been sent to you!", "Animal Request")
 
      redirect_to animals_path, notice: "An adoption request has been sent to the owner."
  end
+
+ # def set_animal
+ #   @animal = Animal.find(params[:id])
+ # end
 
 end

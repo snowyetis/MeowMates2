@@ -9571,7 +9571,7 @@ button:focus {
 .am-right-sidebar .chat {
   width: 255px;
   overflow: hidden;
-  white-space: nowrap;
+  // white-space: nowrap;
   font-size: 0;
 }
 .am-content .chat.chat-scroll {
@@ -9603,19 +9603,20 @@ button:focus {
 .am-right-sidebar .chat .recent,
 .am-right-sidebar .chat .contact,
 .am-right-sidebar .chat .chat-contact-list {
-  font-size: 12px;
+  font-size: 25px;
 }
 .chat .recent .user a,
 .chat .contact .user a,
 .chat .chat-contact-list .user a {
   display: block;
-  padding: 14px 25px;
+  padding: 14px 20px;
   overflow: hidden;
 }
 .am-right-sidebar .chat .recent .user a,
 .am-right-sidebar .chat .contact .user a,
 .am-right-sidebar .chat .chat-contact-list .user a {
-  padding: 11px 25px;
+  // padding: 11px 25px;
+  padding: 0px 25px 0px;
 }
 .chat .recent .user a img,
 .chat .contact .user a img,

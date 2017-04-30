@@ -3,6 +3,7 @@
     <%= image_tag(@animal.animal_intro_avatar.url(:gallery_thumb)) %>
     <div class="pull-right">
       <%= button_to adoption_create_path(@animal), method: :post, class: 'btn btn-warning' do %>
+        <%= hidden_field_tag 'user_id', @animal.user_id %>
         Adopt!
       <% end %>
     </div>
@@ -13,8 +14,8 @@
   </div>
 
   <div class="col-xs-3">
-    <p><b>Owner's Name: </b><%= current_user.name %>
-    <p><b>Name: </b><%= @animal.animalName %></p>
+    <p><b>Owner's Name: </b><%= @animal.user.name %>
+    <p><b>Animal's Name: </b><%= @animal.animalName %></p>
     <p><b>Gender: </b><%= @animal.gender %></p>
     <p><b>Date of Birth: </b><%= @animal.dob %></p>
     <p><b>Fixed: </b><%= t @animal.fixed.class %></p>

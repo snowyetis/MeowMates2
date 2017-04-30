@@ -1,0 +1,18 @@
+  <div id="gritter-notice-wrapper" class="gritter-main-wrapper">
+    <div class="gritter-item-wrapper color <%= set_notification_class(type) %>" style="" role="alert">
+      <div class="gritter-item">
+        <div class="gritter-content gritter-without-image">
+          <a class="gritter-close" href="#" tabindex="1">Close Notification</a>
+          <span class="gritter-title">
+            <% if flash[:alert] %>
+              <%= js add_gritter(flash[:alert], title: "DailySmarty Alert", sticky: false) %>
+            <% elsif flash[:error] %>
+              <%= js add_gritter(flash[:error], title: "DailySmarty Error", sticky: false) %>
+            <% else %>
+              <%= js add_gritter(flash[:notice], title: "DailySmarty Notification", sticky: false) %>
+            <% end %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>

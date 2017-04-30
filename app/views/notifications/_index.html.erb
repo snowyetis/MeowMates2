@@ -1,0 +1,5 @@
+<div id="content" class="list">
+  <% @notifications.each do |notification| %>
+      <%= render 'notifications/notification', notification: notification %>
+  <% end %>
+</div>

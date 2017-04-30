@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_action :get_message_count, if: :user_signed_in?
+  before_action :get_notifications, if: :user_signed_in?
 
   def get_message_count
     # if user_signed_in?
@@ -19,8 +20,12 @@ class ApplicationController < ActionController::Base
     # end
   end
 
+  def get_notifications
+    @notifications = current_user.mailbox.notifications(:read => false)
+  end
+
   protected
-  
+
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :password_confirmation])
       devise_parameter_sanitizer.permit(:sign_in, keys: [:email, :remember_me])

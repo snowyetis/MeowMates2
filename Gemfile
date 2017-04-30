@@ -9,6 +9,7 @@ gem 'jquery-atwho-rails'
 gem 'chosen-rails'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-turbolinks'
+gem 'gritter', '1.2.0'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
@@ -55,15 +56,3 @@ gem 'faker'
 gem 'populator'
 gem 'auto_html', '~>1.6.4'
 gem 'sanitize'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]

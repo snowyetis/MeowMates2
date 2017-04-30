@@ -5,6 +5,7 @@
       <%= render 'shared/avatar', user: activity.owner %>
     </div>
     <div class="timeline-header">
+      <h4 class="name"><%= link_to activity.owner.name, user_path(activity.owner) %></h4>
       <span class="timeline-time"><%= render 'shared/created_at', activity: activity %></span>
       Liked <%= link_to activity.trackable.animalName, animal_path(activity.trackable) %>
       <p class="timeline-activity">
