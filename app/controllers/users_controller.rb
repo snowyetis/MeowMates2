@@ -4,7 +4,7 @@
 
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user,  except: [:animals]
+  before_action :set_user
   before_action :check_ownership, only: [:edit, :update]
   respond_to :html, :js
 
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def animals
-    @animals = current_user.animals.paginate(page: params[:page]).find_each.lazy
+    @animals = @user.animals.paginate(page: params[:page])
   end
 
   def friends

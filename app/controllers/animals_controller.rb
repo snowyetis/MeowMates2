@@ -7,13 +7,14 @@ class AnimalsController < ApplicationController
     @animals = Animal.all
     @animals.each do |animal|
       find_like(animal)
+
       if animal.animal_intro_avatar.url.blank?
         @image = false
       else
         @image = true
       end
-    end
 
+    end
   end
 
   def show

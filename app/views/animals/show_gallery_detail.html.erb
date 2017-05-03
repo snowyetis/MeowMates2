@@ -14,7 +14,7 @@
   </div>
 
   <div class="col-xs-3">
-    <p><b>Owner's Name: </b><%= @animal.user.name %>
+    <p><b>Owner's Name: </b><%= link_to(@animal.user.name, user_path(@animal.user)) %>
     <p><b>Animal's Name: </b><%= @animal.animalName %></p>
     <p><b>Gender: </b><%= @animal.gender %></p>
     <p><b>Date of Birth: </b><%= @animal.dob %></p>

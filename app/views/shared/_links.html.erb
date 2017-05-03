@@ -1,38 +1,29 @@
-<div id="links" class="well">
-  <h5>
-    <%= fa_icon 'newspaper-o' %>
+
+  <li>
     <%= link_to 'NewsFeed', root_path %>
-  </h5>
+  </li>
   <!-- <h5>
     <%= fa_icon 'calendar-o' %>
     <%= link_to 'Create Event', new_event_path %>
   </h5> -->
-  <h5>
-    <%= fa_icon 'hand-peace-o' %>
+  <li>
     <%= link_to 'Browse Pets', animals_path %>
-  </h5>
-  <h5>
-    <%= fa_icon 'paw' %>
+  </li>
+  <li>
     <%= link_to 'View your Pets', animals_user_path(current_user.id) %>
-  </h5>
-  <h5>
-    <%= fa_icon 'arrow-circle-right' %>
+  </li>
+  <li>
     <%= link_to 'Friends', friends_user_path(current_user) %>
-  </h5>
-  <h5>
-    <%= fa_icon 'arrow-circle-left' %>
+  </li>
+  <li>
     <%= link_to 'Followers', followers_user_path(current_user) %>
-  </h5>
-  <h5>
-    <%= fa_icon 'search' %>
+  </li>
+  <li>
     <%= link_to('Find Friends', find_friends_path)%>
-  </h5>
-  <h5>
-    <%= fa_icon 'pencil' %>
+  </li>
+  <li>
     <%= link_to 'Edit Profile', edit_user_path(current_user) %>
-  </h5>
-  <h5>
-    <%= fa_icon 'lock' %>
+  </li>
+  <li>
     <%= link_to 'Change password', edit_user_registration_path %>
-  </h5>
-</div>
+  </li>
