@@ -5,7 +5,7 @@ class Animal < ApplicationRecord
   counter_culture :user
   acts_as_votable
   acts_as_commentable
-  accepts_nested_attributes_for :animal_detail
+  # accepts_nested_attributes_for :animal_details
 
   include PublicActivity::Model
   tracked only: [:create, :like], owner: Proc.new{ |controller, model| model.user }
