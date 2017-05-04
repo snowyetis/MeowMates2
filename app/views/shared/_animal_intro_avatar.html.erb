@@ -1,8 +1,12 @@
   <% if animal %>
     <% if !@galleryView %>
+
       <% if animal.animal_intro_avatar.url.present? %>
-        <%= image_tag animal.animal_intro_avatar.url %>
+        <div class="img">
+          <%= image_tag animal.animal_intro_avatar.url, size:"180x140" %>
+        </div>
       <% end %>
+
     <% else %>
       <div class="item">
         <div class="photo">
