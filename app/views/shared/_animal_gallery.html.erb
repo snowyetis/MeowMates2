@@ -10,6 +10,7 @@
   <% end %>
   <div class="gallery-container">
     <% for animal in @animals %>
+    <% if animal.animal_intro_avatar.present? %>
       <div data-filter="<%= @image %>" class="item">
         <div class="photo">
           <div class="img">
@@ -37,6 +38,7 @@
           </div>
         </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>

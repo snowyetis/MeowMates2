@@ -1,0 +1,17 @@
+<%= form_for(animal_detail) do |f| %>
+  <% if animal_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(animal_detail.errors.count, "error") %> prohibited this animal_detail from being saved:</h2>
+
+      <ul>
+      <% animal_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170504201537) do
+ActiveRecord::Schema.define(version: 20170504225118) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "trackable_type"
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 20170504201537) do
     t.index ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type"
     t.index ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
     t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
+  end
+
+  create_table "animal_details", force: :cascade do |t|
+    t.boolean  "good_with_cats"
+    t.boolean  "good_with_dogs"
+    t.integer  "temperment"
+    t.integer  "health_rating"
+    t.decimal  "overall_score"
+    t.integer  "animal_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["animal_id"], name: "index_animal_details_on_animal_id"
   end
 
   create_table "animals", force: :cascade do |t|
