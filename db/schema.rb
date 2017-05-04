@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170316095230) do
+ActiveRecord::Schema.define(version: 20170504201537) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "trackable_type"
@@ -194,6 +194,7 @@ ActiveRecord::Schema.define(version: 20170316095230) do
     t.integer  "posts_count",            default: 0,      null: false
     t.string   "slug"
     t.integer  "animals_count",          default: 0,      null: false
+    t.boolean  "admin",                  default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

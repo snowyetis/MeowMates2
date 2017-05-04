@@ -13,6 +13,11 @@
           <% fa_icon 'trash' %>
         <% end %>
       <% end %>
+      <% if can? :destroy, comment %>
+        <%= link_to comment_path(comment), method: :delete, class: 'btn btn-danger btn-sm', remote: true do %>
+          <% fa_icon 'trash' %>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <br>

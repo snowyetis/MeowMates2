@@ -40,6 +40,7 @@ group :production do
 end
 
 gem 'devise'
+gem 'cancancan', '~> 1.10'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'friendly_id', '~> 5.0'

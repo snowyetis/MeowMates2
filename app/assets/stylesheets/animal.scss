@@ -8,3 +8,24 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: orange;
 }
+
+.heart-button {
+    color: #555555;
+    background-color: #fff;
+    /* border-color: #dedede; */
+}
+
+.gallery-container .item .photo .description .icon {
+    display: table-cell;
+    background-color: #fff !important;
+    padding: 20px;
+    vertical-align: middle;
+    width: 20px;
+}
+
+// .btn-default {
+//     border-color: #dedede;
+//     color: #555555;
+//     background-color: #fff;
+//     border-color: #fff;
+// }

@@ -2,16 +2,16 @@
 
   <% if current_user.liked? likeable %>
     <%= form_tag unlike_path(likeable_type: 'Animal', likeable_id: likeable.id), method: :post, remote: true do %>
-      <% link_to class: 'btn btn-default' do %>
-        <%= fa_icon 'heart', class: 'heart-fill' %>
+      <% button_tag class: 'btn heart-button' do %>
+        <%= fa_icon 'heart', class: 'heart-fill fa-3x' %>
       <% end %>
     <% end %>
 
   <% else %>
 
     <%= form_tag like_path(likeable_type: 'Animal', likeable_id: likeable.id), remote: true do %>
-      <% link_to class: 'btn btn-default' do %>
-        <%= fa_icon 'heart-o' %>
+      <% button_tag class: 'btn heart-button' do %>
+        <%= fa_icon 'heart-o', class: 'fa-3x' %>
       <% end %>
     <% end %>
   <% end %>
