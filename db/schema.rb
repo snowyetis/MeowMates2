@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170504225118) do
     t.index ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
     t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
   end
+  
 
   create_table "animal_details", force: :cascade do |t|
     t.boolean  "good_with_cats"
