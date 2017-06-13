@@ -25,13 +25,23 @@
       <ul class="nav nav-tabs">
         <li class="active"><a href="#post" data-toggle="tab" aria-expanded="true">Write a Post</a></li>
         <li class=""><a href="#animals" data-toggle="tab" aria-expanded="false">Post an Animal</a></li>
+        <!-- <li class="<%= 'active' if @appprovedClass %>"><% link_to 'Post an Animal', @animal, id: 'animals', remote: true %></li> -->
       </ul>
       <div class="tab-content">
           <div id="post" class="tab-pane cont active">
             <%= render 'posts/form' %>
           </div>
           <div id="animals" class="tab-pane cont">
-            <%= render 'animals/adoption_form' %>
+            <!-- <% render 'animals/adoption_form', locals: @animal %> -->
+            <div class="well">
+                <div id="adoption_form">
+                  <%= render 'animals/form' %>
+                </div>
+                <!-- <div id="rating_form">
+                </div>
+                <% link_to 'Go back to Adoption Form', show_adoption_form_path(@animal), id: 'btn_show_adopt', class: 'hide', remote: true %>
+                <% link_to 'Go to Rating Form', show_rating_form_path, id: 'btn_show_ratimg', remote: true %> -->
+            </div>
           </div>
         </div>
       </div>

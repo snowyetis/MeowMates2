@@ -10,3 +10,8 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 # Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
+
+# Uncomment to make controller specific CSS and JS
+# %w( controller_one controller_two controller_three ).each do |controller|
+#   Rails.application.config.assets.precompile += ["#{controller}.js.coffee", "#{controller}.css"]
+# end

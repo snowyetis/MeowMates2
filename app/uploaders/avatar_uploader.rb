@@ -6,6 +6,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::Compatibility::Paperclip
   # Include RMagick or MiniMagick support:
   include CarrierWave::MiniMagick
+  include ::CarrierWave::Backgrounder::Delay
   # include CarrierWave::RMagick
 
   # Choose what kind of storage to use for this uploader:

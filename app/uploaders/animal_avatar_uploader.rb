@@ -1,5 +1,6 @@
 class AnimalAvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
+  include ::CarrierWave::Backgrounder::Delay
 
   # Choose what kind of storage to use for this uploader:
   storage :file if Rails.env.development?

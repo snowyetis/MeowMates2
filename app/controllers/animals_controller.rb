@@ -27,16 +27,53 @@ class AnimalsController < ApplicationController
   def new
   end
 
-  def create
-    @animals  = current_user.animals.new(animal_params)
+  def check_and_show_form
+    # render js: "$('.post_form').hide(); $('#detail_form').html('<%= escape_javascript(render partial: 'animal_details/form', locals: { product: @animal } )%>')"
+  end
 
-    if @animals.save
-      # TODO: I don't think I need this
-      # @animals.animal_intro_avatar.url
-      redirect_to root_path, notice: @animals.animalName + " has been posted, successfully."
-    else
-      redirect_to root_path, error: @animals.errors.full_messages.first
+  # def show_rating_form
+  #   @animal =  Animal.new
+  #   @animal_detail = @animal.build_animal_detail
+  #
+  #   respond_to do |format|
+  #     format.js
+  #     format.html
+  #   end
+  # end
+
+  def show_adoption_form
+    @animal = Animal.new
+
+    respond_to do |format|
+      format.js
+      format.html
     end
+  end
+
+  def create
+    @animal = current_user.animals.new(animal_params)
+
+    # if @animals.save
+    #   redirect_to root_path, notice: @animals.animalName + " has been posted, successfully."
+    # else
+    #   redirect_to root_path, error: @animals.errors.full_messages.first
+    # end
+    # respond_to do |format|
+      if @animal.save
+        # format.html { redirect_to show_rating_form_path, notice: @animal.animalName + " has been posted, successfully." }
+        # format.js
+        # format.html { render action: "home/index", notice: @animal.animalName + " has been posted, successfully." }
+        # format.json { render json: @animal, status: :created, location: @animal }
+      # else
+      #   format.html { render action: "new" }
+      #   format.json { render json: @animal.errors, status: :unprocessable_entity }
+
+        redirect_to root_path, notice: @animal.animalName + " has been posted, successfully."
+      else
+        redirect_to root_path, error: @animal.errors.full_messages.first
+
+      end
+    # end
   end
 
   def destroy

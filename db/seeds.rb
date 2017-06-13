@@ -7,11 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-animal.create
-animal.animalName = "Kitty Purriington"
-animal.gender = "female"
-animal.shots = "T"
-animal.fixed = "T"
-animal.content = "This is content"
-animal.user_id = 1
-animal.remote_animal_intro_avatar.url =
+# animal.create
+# animal.animalName = "Kitty Purriington"
+# animal.gender = "female"
+# animal.shots = "T"
+# animal.fixed = "T"
+# animal.content = "This is content"
+# animal.user_id = 1
+# animal.remote_animal_intro_avatar.url =
+# User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

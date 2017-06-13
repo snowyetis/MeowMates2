@@ -8,7 +8,7 @@
     <div class="timeline-header">
       <h4 class="name"><%= link_to activity.owner.name, user_path(activity.owner) %></h4>
       <span class="timeline-time"><%= render 'shared/created_at', activity: activity %></span>
-      <div id="animal-<%= activity.trackable.id %>" class="activity-post">
+      <div id="animal-<%= activity.trackable.id %>" class="activity-animal">
         <%= render activity.trackable, remote: true %>
       </div>
     </div>

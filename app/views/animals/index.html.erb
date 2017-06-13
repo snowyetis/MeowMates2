@@ -11,7 +11,11 @@
       <div data-filter="<%= @image %>" class="item">
         <div class="photo">
           <div class="img">
-            <%= image_tag animal.animal_intro_avatar.url %>
+            <% if animal.animal_intro_avatar.present? %>
+              <%= image_tag animal.animal_intro_avatar.url %>
+            <% else %>
+              <%= image_tag 'avatar' %>
+            <% end %>
           <div class="over">
             <div class="func">
               <a href="#">

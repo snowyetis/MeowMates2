@@ -15,6 +15,19 @@ $(document).ready(function(){
     readURL(this, preview);
   });
 
+  $('.input-mentionable').atwho({
+    at: '@',
+    data: $('#mentionable-data').data('content'),
+    insertTpl: '<a href="/users/${id}">${name}</a>',
+    displayTpl: '<li data-id="${id}"><span>${name}</span></li>',
+    limit: 15
+  });
+
+  $('.animal_form').submit(function() {
+    $('#animal_content').val($('#animal-content').html());
+    $('#animal-content').html('');
+  });
+
   var self = $("#masonry");
   self.imagesLoaded(function () {
     self.masonry({
@@ -32,5 +45,4 @@ $(document).ready(function(){
       return $(this).attr("data-filter") == filter;
     }
   });
-
 });

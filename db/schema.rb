@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170504225118) do
+ActiveRecord::Schema.define(version: 20170613054024) do
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string   "namespace"
+    t.text     "body"
+    t.string   "resource_type"
+    t.integer  "resource_id"
+    t.string   "author_type"
+    t.integer  "author_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
 
   create_table "activities", force: :cascade do |t|
     t.string   "trackable_type"
@@ -27,7 +41,23 @@ ActiveRecord::Schema.define(version: 20170504225118) do
     t.index ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
     t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
   end
-  
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
 
   create_table "animal_details", force: :cascade do |t|
     t.boolean  "good_with_cats"
@@ -48,14 +78,15 @@ ActiveRecord::Schema.define(version: 20170504225118) do
     t.date     "dob"
     t.boolean  "shots"
     t.boolean  "fixed"
-    t.text     "content",                         null: false
+    t.text     "content",                             null: false
     t.integer  "user_id"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.integer  "cached_votes_up",     default: 0
-    t.integer  "comments_count",      default: 0
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "cached_votes_up",         default: 0
+    t.integer  "comments_count",          default: 0
     t.string   "location"
     t.string   "animal_intro_avatar"
+    t.string   "animal_intro_avatar_tmp"
     t.index ["cached_votes_up"], name: "index_animals_on_cached_votes_up"
     t.index ["comments_count"], name: "index_animals_on_comments_count"
     t.index ["user_id"], name: "index_animals_on_user_id"
@@ -180,6 +211,85 @@ ActiveRecord::Schema.define(version: 20170504225118) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "survey_answers", force: :cascade do |t|
+    t.integer  "attempt_id"
+    t.integer  "question_id"
+    t.integer  "option_id"
+    t.boolean  "correct"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "option_text"
+    t.integer  "option_number"
+    t.integer  "predefined_value_id"
+  end
+
+  create_table "survey_attempts", force: :cascade do |t|
+    t.string  "participant_type"
+    t.integer "participant_id"
+    t.integer "survey_id"
+    t.boolean "winner"
+    t.integer "score"
+  end
+
+  create_table "survey_options", force: :cascade do |t|
+    t.integer  "question_id"
+    t.integer  "weight",          default: 0
+    t.string   "text"
+    t.boolean  "correct"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "locale_text"
+    t.integer  "options_type_id"
+    t.string   "head_number"
+  end
+
+  create_table "survey_predefined_values", force: :cascade do |t|
+    t.string   "head_number"
+    t.string   "name"
+    t.string   "locale_name"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "survey_questions", force: :cascade do |t|
+    t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "section_id"
+    t.string   "head_number"
+    t.text     "description"
+    t.string   "locale_text"
+    t.string   "locale_head_number"
+    t.text     "locale_description"
+    t.integer  "questions_type_id"
+    t.boolean  "mandatory",          default: false
+  end
+
+  create_table "survey_sections", force: :cascade do |t|
+    t.string   "head_number"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "survey_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "locale_head_number"
+    t.string   "locale_name"
+    t.text     "locale_description"
+  end
+
+  create_table "survey_surveys", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "attempts_number",    default: 0
+    t.boolean  "finished",           default: false
+    t.boolean  "active",             default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "locale_name"
+    t.text     "locale_description"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name",                   default: "",     null: false
     t.string   "email",                  default: "",     null: false
@@ -208,6 +318,8 @@ ActiveRecord::Schema.define(version: 20170504225118) do
     t.string   "slug"
     t.integer  "animals_count",          default: 0,      null: false
     t.boolean  "admin",                  default: false
+    t.string   "avatar_tmp"
+    t.string   "cover_tmp"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -1,4 +1,4 @@
-
+<div id="animal-<%= animal.id %>">
   <div class="info">
     <span class="action">Posted an <%= link_to 'animal', animal %>, meet <%= animal.animalName %></span>
   </div>
@@ -23,5 +23,6 @@
         <% end %>
       </div>
     </div>
+    <%= render 'shared/animal_actions', resource: animal %>
   </div>
-<%= render 'shared/animal_actions', resource: animal %>
+</div>

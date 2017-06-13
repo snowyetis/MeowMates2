@@ -10,6 +10,7 @@ gem 'chosen-rails'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-turbolinks'
 gem 'gritter', '1.2.0'
+gem 'questionnaire_engine', '0.1', :require=>"survey"
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
@@ -39,12 +40,17 @@ group :production do
   gem 'tunemygc'
 end
 
+gem 'redis'
+gem 'resque'
+gem 'activeadmin'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem 'carrierwave'
+gem 'carrierwave_backgrounder'
 gem "mini_magick"
 gem 'friendly_id', '~> 5.0'
 
+gem 'kaminari'
 gem 'will_paginate', '~> 3.1.0'
 gem 'public_activity'
 gem 'acts_as_votable', '~> 0.10.0'

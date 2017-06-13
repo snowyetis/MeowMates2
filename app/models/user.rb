@@ -5,12 +5,14 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable,
-    :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
   acts_as_voter
   acts_as_follower
   acts_as_followable
   acts_as_messageable
+  has_surveys
 
   has_many :posts
   has_many :comments
@@ -18,7 +20,10 @@ class User < ActiveRecord::Base
   has_many :animals
 
   mount_uploader :avatar, AvatarUploader
+  process_in_background :avatar
   mount_uploader :cover, CoverUploader
+  # store_in_background :cover
+  process_in_background :cover
 
   def mailboxer_email(object)
     if object.class==Mailboxer::Notification

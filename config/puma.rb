@@ -15,5 +15,15 @@ on_worker_boot do
                 Rails.application.config.database_configuration[Rails.env]
     config['pool'] = ENV['RAILS_MAX_THREADS'] || 5
     ActiveRecord::Base.establish_connection(config)
+    if defined?(Resque)
+      Resque.redis = ENV["REDISCLOUD_URL"] || "redis://127.0.0.1:6379"
+    end
   end
+end
+
+Resque.after_fork do |job|
+end
+
+before_fork do
+  ActiveRecord::Base.connection_pool.disconnect!
 end

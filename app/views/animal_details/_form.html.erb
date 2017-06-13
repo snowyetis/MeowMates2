@@ -1,17 +1,18 @@
-<%= form_for(animal_detail) do |f| %>
-  <% if animal_detail.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(animal_detail.errors.count, "error") %> prohibited this animal_detail from being saved:</h2>
-
-      <ul>
-      <% animal_detail.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_for(@animal_detail, html: { role: "form", class: "form" } ) do |q| %>
   <div class="actions">
-    <%= f.submit %>
+    <h3>Pet Rating</h3>
+    <div class="form-group">
+      <%= q.label :good_with_cats %>
+    </div>
+    <div class="form-group">
+      <%= q.label :good_with_dogs %>
+    </div>
+    <div class="form-group">
+      <%= q.label :temperment %>
+    </div>
+    <div class="form-group">
+      <%= q.label :health_rating %>
+    </div>
+    <%= q.submit 'Find your pets Rating', class: 'btn btn-primary' %>
   </div>
 <% end %>
