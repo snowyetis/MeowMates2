@@ -533,7 +533,7 @@ DEPENDENCIES
   rails (= 5.0.0)
   rails_12factor
   redis
-  resque
+  resque (~> 1.22.0)
   sanitize
   sass-rails (~> 5.0.0)
   scout_apm

@@ -42,7 +42,7 @@ group :production do
 end
 
 gem 'redis'
-gem 'resque'
+gem 'resque', "~> 1.22.0"
 gem 'activeadmin'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
