@@ -38,6 +38,7 @@ group :production do
   gem 'scout_apm'
   gem 'informant-rails'
   gem 'tunemygc'
+  gem 'keen'
 end
 
 gem 'redis'
