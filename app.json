@@ -1,0 +1,138 @@
+{
+  "name": "MeowMates2",
+  "description": "",
+  "scripts": {
+  },
+  "env": {
+    "AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "INFORMANT_API_KEY": {
+      "required": true
+    },
+    "KEEN_API_URL": {
+      "required": true
+    },
+    "KEEN_PROJECT_ID": {
+      "required": true
+    },
+    "KEEN_READ_KEY": {
+      "required": true
+    },
+    "KEEN_WRITE_KEY": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "MAILTRAP_API_TOKEN": {
+      "required": true
+    },
+    "MIN_THREADS": {
+      "required": true
+    },
+    "PASSWORD": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true
+    },
+    "RAILS_MAX_THREADS": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "REDISCLOUD_URL": {
+      "required": true
+    },
+    "RUBY_GC_HEAP_FREE_SLOTS": {
+      "required": true
+    },
+    "RUBY_GC_HEAP_GROWTH_FACTOR": {
+      "required": true
+    },
+    "RUBY_GC_HEAP_GROWTH_MAX_SLOTS": {
+      "required": true
+    },
+    "RUBY_GC_HEAP_INIT_SLOTS": {
+      "required": true
+    },
+    "RUBY_GC_HEAP_OLDOBJECT_LIMIT_FACTOR": {
+      "required": true
+    },
+    "RUBY_GC_MALLOC_LIMIT": {
+      "required": true
+    },
+    "RUBY_GC_MALLOC_LIMIT_GROWTH_FACTOR": {
+      "required": true
+    },
+    "RUBY_GC_MALLOC_LIMIT_MAX": {
+      "required": true
+    },
+    "RUBY_GC_OLDMALLOC_LIMIT": {
+      "required": true
+    },
+    "RUBY_GC_OLDMALLOC_LIMIT_GROWTH_FACTOR": {
+      "required": true
+    },
+    "RUBY_GC_OLDMALLOC_LIMIT_MAX": {
+      "required": true
+    },
+    "RUBY_GC_SPY": {
+      "required": true
+    },
+    "RUBY_GC_TOKEN": {
+      "required": true
+    },
+    "RUBY_GC_TUNE": {
+      "required": true
+    },
+    "SCOUT_KEY": {
+      "required": true
+    },
+    "SCOUT_LOG_LEVEL": {
+      "required": true
+    },
+    "SCOUT_MONITOR": {
+      "required": true
+    },
+    "secret_key_base": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "USERNAME": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "informant",
+    "keen",
+    "mailtrap",
+    "heroku-postgresql",
+    "rediscloud",
+    "scout",
+    "tunemygc"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/ello/heroku-buildpack-imagemagick.git"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-ruby.git"
+    }
+  ]
+}
