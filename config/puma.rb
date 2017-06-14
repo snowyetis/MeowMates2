@@ -21,9 +21,9 @@ on_worker_boot do
   end
 end
 
-Resque.after_fork do |job|
-end
-
-before_fork do
-  ActiveRecord::Base.connection_pool.disconnect!
-end
+# Resque.after_fork do |job|
+# end
+#
+# before_fork do
+#   ActiveRecord::Base.connection_pool.disconnect!
+# end
