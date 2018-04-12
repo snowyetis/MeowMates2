@@ -26,7 +26,7 @@ namespace :animalfill do
     end
 
     user = User.new(name: 'Rails', email: 'test@socify.com', sex: 'female', password: 'password')
-    user.skip_confirmation!
+    # user.skip_confirmation!
     user.save!
     puts 'Created test user with email=test@socify.com and password=password'
 

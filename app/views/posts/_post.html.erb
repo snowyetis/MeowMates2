@@ -4,8 +4,8 @@
     <%= post.content_html %>
   </span>
   <% if post.attachment.present? %>
-    <div class="attachment">
-      <%= image_tag post.attachment %>
+    <div class="img">
+      <%= image_tag post.attachment,size: '120x80' %>
     </div>
   <% end %>
   <%= render 'shared/created_at', activity: post %>

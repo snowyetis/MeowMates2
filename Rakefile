@@ -3,5 +3,10 @@
 
 require File.expand_path('../config/application', __FILE__)
 require 'resque/tasks'
+require 'rspec/core/rake_task'
 
 Rails.application.load_tasks
+
+RSpec::Core::RakeTask.new do |task|
+  task.rspec_opts = ['--color', '--format', 'doc']
+end

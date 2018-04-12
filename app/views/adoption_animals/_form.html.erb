@@ -1,0 +1,17 @@
+<%= form_for(adoption_animal) do |f| %>
+  <% if adoption_animal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(adoption_animal.errors.count, "error") %> prohibited this adoption_animal from being saved:</h2>
+
+      <ul>
+      <% adoption_animal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

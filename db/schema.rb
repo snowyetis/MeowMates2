@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613054024) do
+ActiveRecord::Schema.define(version: 20170621033240) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -59,6 +59,28 @@ ActiveRecord::Schema.define(version: 20170613054024) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "adoption_animals", force: :cascade do |t|
+    t.string   "species"
+    t.string   "name"
+    t.string   "pet_id"
+    t.string   "gender"
+    t.boolean  "fixed"
+    t.string   "breed"
+    t.date     "found_on"
+    t.datetime "scraped_at"
+    t.integer  "shelter_id"
+    t.integer  "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["breed"], name: "index_adoption_animals_on_breed"
+    t.index ["fixed"], name: "index_adoption_animals_on_fixed"
+    t.index ["gender"], name: "index_adoption_animals_on_gender"
+    t.index ["image_id"], name: "index_adoption_animals_on_image_id"
+    t.index ["pet_id"], name: "index_adoption_animals_on_pet_id"
+    t.index ["shelter_id"], name: "index_adoption_animals_on_shelter_id"
+    t.index ["species"], name: "index_adoption_animals_on_species"
+  end
+
   create_table "animal_details", force: :cascade do |t|
     t.boolean  "good_with_cats"
     t.boolean  "good_with_dogs"
@@ -78,15 +100,16 @@ ActiveRecord::Schema.define(version: 20170613054024) do
     t.date     "dob"
     t.boolean  "shots"
     t.boolean  "fixed"
-    t.text     "content",                             null: false
+    t.text     "content",                                    null: false
     t.integer  "user_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.integer  "cached_votes_up",         default: 0
-    t.integer  "comments_count",          default: 0
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.integer  "cached_votes_up",                default: 0
+    t.integer  "comments_count",                 default: 0
     t.string   "location"
     t.string   "animal_intro_avatar"
     t.string   "animal_intro_avatar_tmp"
+    t.boolean  "animal_intro_avatar_processing"
     t.index ["cached_votes_up"], name: "index_animals_on_cached_votes_up"
     t.index ["comments_count"], name: "index_animals_on_comments_count"
     t.index ["user_id"], name: "index_animals_on_user_id"
@@ -211,6 +234,12 @@ ActiveRecord::Schema.define(version: 20170613054024) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "shelters", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "survey_answers", force: :cascade do |t|
     t.integer  "attempt_id"
     t.integer  "question_id"
@@ -320,6 +349,8 @@ ActiveRecord::Schema.define(version: 20170613054024) do
     t.boolean  "admin",                  default: false
     t.string   "avatar_tmp"
     t.string   "cover_tmp"
+    t.boolean  "avatar_processing"
+    t.boolean  "cover_processing"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
