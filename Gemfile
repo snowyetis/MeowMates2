@@ -27,6 +27,10 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
 end
 
 group :production do
@@ -45,6 +49,8 @@ gem 'redis'
 gem 'resque', "~> 1.22.0"
 gem 'activeadmin'
 gem 'devise'
+gem 'figaro'
+
 gem 'cancancan', '~> 1.10'
 gem 'carrierwave'
 gem 'carrierwave_backgrounder'

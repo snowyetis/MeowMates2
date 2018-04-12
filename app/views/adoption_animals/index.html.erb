@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Adoption Animals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adoption_animals.each do |adoption_animal| %>
+      <tr>
+        <td><%= link_to 'Show', adoption_animal %></td>
+        <td><%= link_to 'Edit', edit_adoption_animal_path(adoption_animal) %></td>
+        <td><%= link_to 'Destroy', adoption_animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adoption Animal', new_adoption_animal_path %>

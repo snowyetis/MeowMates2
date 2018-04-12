@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-9">
-    <%= image_tag(@animal.animal_intro_avatar.url(:gallery_thumb)) %>
+    <%= image_tag(@animal.animal_intro_avatar, size: '420x380') %>
     <div class="pull-right">
       <%= button_to adoption_create_path(@animal), method: :post, class: 'btn btn-warning' do %>
         <%= hidden_field_tag 'user_id', @animal.user_id %>
