@@ -26,5 +26,5 @@ module ApplicationHelper
   def avatar_for_thumb(user)
     image_tag user.avatar.thumb
   end
-
+  
 end

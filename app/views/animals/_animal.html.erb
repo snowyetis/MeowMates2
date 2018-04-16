@@ -3,11 +3,14 @@
     <span class="action">Posted an <%= link_to 'animal', animal %>, meet <%= animal.animalName %></span>
   </div>
   <div class="content">
-    <% if animal.animal_intro_avatar.present? %>
-      <div class="img">
-        <%= image_tag animal.animal_intro_avatar.url, size: '120x80' %>
-      </div>
-    <% end %>
+  <% if animal.animal_intro_avatar.url.present? %>
+    <div class="img">
+      <%= image_tag animal.animal_intro_avatar.url, size: '120x80' %>
+    </div>
+  <% end %>
+  <% if animal.animal_intro_avatar.url.blank? and animal.animal_intro_avatar_tmp? %>
+    <image src="../../tmp/uploads/<%=  animal.animal_intro_avatar_tmp %>" />
+  <% end %>
     <%= render 'shared/created_at', activity: animal %>
     <div class="points">
       <span class="like-count"><%= pluralize(animal.cached_votes_up, 'like') %></span>

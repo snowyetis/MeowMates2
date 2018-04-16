@@ -14,7 +14,7 @@ class Animal < ApplicationRecord
   # default_scope -> { order('created_at DESC') }
 
   mount_uploader :animal_intro_avatar, AnimalAvatarUploader
-  # store_in_background :animal_intro_avatar
+  store_in_background :animal_intro_avatar
   process_in_background :animal_intro_avatar
 
   self.per_page = 10

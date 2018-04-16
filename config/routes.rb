@@ -1,8 +1,8 @@
 require 'resque/server'
 
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  # devise_for :admin_users, ActiveAdmin::Devise.config
+  # ActiveAdmin.routes(self)
 
   resources :posts, :animals, :animal_details, :adoption_animals
   resources :comments, only: [:create, :destroy]

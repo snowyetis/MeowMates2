@@ -10,7 +10,7 @@ gem 'chosen-rails'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-turbolinks'
 gem 'gritter', '1.2.0'
-gem 'questionnaire_engine', '0.1', :require=>"survey"
+# gem 'questionnaire_engine', '0.1', :require=>"survey"
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
@@ -47,7 +47,7 @@ end
 
 gem 'redis'
 gem 'resque', "~> 1.22.0"
-gem 'activeadmin'
+# gem 'activeadmin'
 gem 'devise'
 gem 'figaro'
 

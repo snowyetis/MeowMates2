@@ -26,3 +26,11 @@
     </div>
   </nav>
 </div>
+<%= link_to 'Rate your Pet', url_for({controller: 'animals', action: 'check_and_show_form'}), method: :patch, remote: true %>
+<%= render 'animals/form', locals: @animal %>
+<%= render 'animal_details/form', locals: @animal_detail %>
+
+
+
+<%= link_to 'Go back to Adoption Form', show_adoption_form_path(@animal), id: 'btn_show_adopt' , remote: true %>
+<%= link_to 'Go to Rating Form', show_rating_form_path, id: 'btn_show_ratimg', remote: true %>
