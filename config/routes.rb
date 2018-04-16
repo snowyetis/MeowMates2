@@ -1,9 +1,6 @@
 require 'resque/server'
 
 Rails.application.routes.draw do
-  # devise_for :admin_users, ActiveAdmin::Devise.config
-  # ActiveAdmin.routes(self)
-
   resources :posts, :animals, :animal_details, :adoption_animals
   resources :comments, only: [:create, :destroy]
   resources :events, except: [:edit, :update]
@@ -31,13 +28,6 @@ Rails.application.routes.draw do
   end
   resources :notifications
   resources :messages, only: [:new, :create]
-
-  get :survey_attempts, to: 'user_surveys/attempts#new'
-  post :survey_attempts, to: 'user_surveys/attempts#create'
-
-  # resources :admin_surveys do
-  #   resources :attempts, :surveys
-  # end
 
   get 'show_gallery_detail/:id', to: 'animals#show_gallery_detail', as: 'show_gallery_detail'
   get 'show_rating_form', to: 'animals#show_rating_form', as: 'show_rating_form'
