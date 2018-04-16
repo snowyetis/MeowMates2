@@ -11,6 +11,9 @@ end
 
 Rails.application.load_tasks
 
-RSpec::Core::RakeTask.new do |task|
+begin
+  RSpec::Core::RakeTask.new do |task|
   task.rspec_opts = ['--color', '--format', 'doc']
+  end
+  rescue LoadError
 end
