@@ -477,6 +477,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (~> 3.2.0)
+  bundler
   cancancan (~> 1.10)
   carrierwave
   carrierwave_backgrounder
@@ -527,4 +528,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.6
+   1.16.1

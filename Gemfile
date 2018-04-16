@@ -10,6 +10,7 @@ gem 'chosen-rails'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-turbolinks'
 gem 'gritter', '1.2.0'
+gem 'bundler'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
